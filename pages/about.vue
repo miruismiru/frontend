@@ -1,11 +1,11 @@
 <script setup>
 useSeoMeta({
   ogTitle: "About",
-  ogDescription: "About amvstrm...",
+  ogDescription: "About DOTstream...",
   ogImage: "logo.png",
   ogUrl: "[og:url]",
   twitterTitle: "About",
-  twitterDescription: "About amvstrm...",
+  twitterDescription: "About DOTstream...",
   twitterImage: "logo.png",
   twitterCard: "summary",
 });

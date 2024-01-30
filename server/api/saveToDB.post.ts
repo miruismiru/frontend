@@ -9,7 +9,7 @@ export default defineEventHandler(async (event) => {
     })
   }
   const db = Deta(space_cllect).Base(
-    "amvstrm-data"
+    "DOTstream-data"
   );
   const post = await readBody(event);
   const q = getQuery(event);
