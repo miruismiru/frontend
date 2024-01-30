@@ -79,16 +79,7 @@ const gotoRandomID = async () => {
       </ClientOnly>
     </v-main>
     <v-footer app height="auto" dense absolute>
-      <p>DOTstream Cambodia © Copyright {{ new Date().getFullYear() }}</p>
-      <v-spacer />
-      <v-btn
-        :prepend-icon="
-          !/\/pwa\.*/.test(useRoute().path) ? 'mdi-cellphone' : 'mdi-web'
-        "
-        :to="!/\/pwa\.*/.test(useRoute().path) ? '/pwa' : '/'"
-      >
-        {{ !/\/pwa\.*/.test(useRoute().path) ? "PWA" : "Web" }}
-      </v-btn>
+
     </v-footer>
   </v-app>
 </template>
