@@ -1,10 +1,10 @@
 <script setup>
 useSeoMeta({
   ogTitle: "Home",
-  ogDescription: "DOTstream - A streaming service for weebo...",
+  ogDescription: "amvstrm - A streaming service for weebo...",
   ogUrl: useRoute().fullPath,
   twitterTitle: "Home",
-  twitterDescription: "DOTstream - A streaming service for weebo...",
+  twitterDescription: "amvstrm - A streaming service for weebo...",
   twitterCard: "summary",
 });
 

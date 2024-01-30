@@ -23,7 +23,7 @@ useSeoMeta({
   ogDescription: anime.value?.description,
   ogImage: anime.value?.coverImage.large,
   ogUrl: useRoute().fullPath,
-  twitterTitle: `${anime.value?.title.userPreferred} - DOTstream`,
+  twitterTitle: `${anime.value?.title.userPreferred} - amvstrm`,
   twitterDescription: anime.value?.description,
   twitterImage: anime.value?.coverImage.large,
   twitterCard: "summary",

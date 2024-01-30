@@ -25,7 +25,7 @@ useHead({
   },
   title: anime.value?.title.userPreferred
     ? "Download " + anime.value?.title.userPreferred + " Episode " + getEP
-    : "DOTstream",
+    : "amvstrm",
 });
 </script>
 

@@ -17,7 +17,7 @@ const gotoRandomID = async () => {
           <NuxtImg
             src="https://raw.githubusercontent.com/omgdaddy/frontend/main/public/logo.png"
             style="display: flex;"
-            alt="DOTstream"
+            alt="amvstrm"
             quality="80"
             width="140px"
           />
@@ -49,11 +49,12 @@ const gotoRandomID = async () => {
       <v-divider />
       <v-list>
         <v-list-subheader>More</v-list-subheader>
-        <v-list-item title="About us" to="/about" />
-
-     
+        <v-list-item title="About us" to="/about" >
+  
+          
         </v-list-item>
-      
+        
+        
       </v-list>
     </v-navigation-drawer>
 
@@ -63,7 +64,7 @@ const gotoRandomID = async () => {
           <NuxtImg
             src="/logo.png"
             style="display: flex;"
-            alt="DOTstream"
+            alt="dotstream"
             quality="80"
             width="140px"
           />
@@ -79,7 +80,9 @@ const gotoRandomID = async () => {
       </ClientOnly>
     </v-main>
     <v-footer app height="auto" dense absolute>
-
+      <p>with love ;3 © Copyright {{ new Date().getFullYear() }}</p>
+      <v-spacer />
+     
     </v-footer>
   </v-app>
 </template>

@@ -38,25 +38,25 @@ useSeoMeta({
   ogTitle: `${
     anime.value?.title.userPreferred
       ? anime.value?.title.userPreferred + " Episode " + getEP
-      : "DOTstream"
-  } - DOTstream`,
+      : "amvstrm"
+  } - amvstrm`,
   ogDescription: `Watch ${
     anime.value?.title.userPreferred
       ? anime.value?.title.userPreferred + " Episode " + getEP
-      : "DOTstream"
-  } on DOTstream`,
+      : "amvstrm"
+  } on amvstrm`,
   ogImage: anime?.value.coverImage.large,
   ogUrl: useRoute().fullPath,
   twitterTitle: `${
     anime.value?.title.userPreferred
       ? anime.value?.title.userPreferred + " Episode " + getEP
-      : "DOTstream"
-  } - DOTstream`,
+      : "amvstrm"
+  } - amvstrm`,
   twitterDescription: `Watch ${
     anime.value?.title.userPreferred
       ? anime.value?.title.userPreferred + " Episode " + getEP
-      : "DOTstream"
-  } on DOTstream`,
+      : "amvstrm"
+  } on amvstrm`,
   twitterImage: anime?.value.coverImage.large,
   twitterCard: "summary",
 });
@@ -67,7 +67,7 @@ useHead({
   },
   title: anime.value?.title.userPreferred
     ? anime.value?.title.userPreferred + " Episode " + getEP
-    : "DOTstream",
+    : "amvstrm",
 });
 
 const { data: time2Skip } = useFetch(

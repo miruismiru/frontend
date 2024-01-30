@@ -54,7 +54,7 @@ export default {
       },
       contextmenu: [
         {
-          html: `© DOTstream ${new Date().getFullYear()}`,
+          html: `© amvstrm ${new Date().getFullYear()}`,
           click: function () {
             window.open("/");
           },

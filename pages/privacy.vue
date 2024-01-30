@@ -1,11 +1,11 @@
 <script setup>
 useSeoMeta({
   ogTitle: 'Privacy Policy',
-  ogDescription: 'Privacy policy for DOTstream',
+  ogDescription: 'Privacy policy for amvstrm',
   ogImage: 'logo.png',
   ogUrl: '[og:url]',
   twitterTitle: 'Home',
-  twitterDescription: 'Privacy policy for DOTstream',
+  twitterDescription: 'Privacy policy for amvstrm',
   twitterImage: 'logo.png',
   twitterCard: 'summary'
 })
@@ -68,7 +68,7 @@ useHead({
           <p>
             <strong>Company</strong> (referred to as either &quot;the
             Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in
-            this Agreement) refers to DOTstream.
+            this Agreement) refers to amvstrm.
           </p>
         </li>
         <li>
@@ -116,7 +116,7 @@ useHead({
         </li>
         <li>
           <p>
-            <strong>Website</strong> refers to DOTstream, accessible from
+            <strong>Website</strong> refers to amvstrm, accessible from
             <a
               href="https://amvstr.ml"
               rel="external nofollow noopener"

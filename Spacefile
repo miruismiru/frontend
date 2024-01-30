@@ -2,7 +2,7 @@
 v: 0
 icon: public/logo-512x512.png
 micros:
-  - name: DOTstreamnuxt3
+  - name: amvstrmnuxt3
     src: .
     engine: nuxt
     primary: true

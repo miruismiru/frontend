@@ -5,7 +5,7 @@ export default defineEventHandler(async (event) => {
   if (!space_cllect) {
     return {status : 401, message: "unauthorized"}
   }
-  const db = Deta(space_cllect).Base("DOTstream-data");
+  const db = Deta(space_cllect).Base("amvstrm-data");
   try {
     return {
       status: 200,
