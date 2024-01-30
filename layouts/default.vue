@@ -17,7 +17,7 @@ const gotoRandomID = async () => {
           <NuxtImg
             src="https://raw.githubusercontent.com/omgdaddy/frontend/main/public/logo.png"
             style="display: flex;"
-            alt="amvstrm"
+            alt="dotstream"
             quality="80"
             width="140px"
           />
@@ -62,7 +62,7 @@ const gotoRandomID = async () => {
       <v-col>
         <NuxtLink to="/">
           <NuxtImg
-            src="/logo.png"
+            src="https://raw.githubusercontent.com/omgdaddy/frontend/main/public/logo.png"
             style="display: flex;"
             alt="dotstream"
             quality="80"
