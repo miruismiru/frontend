@@ -17,7 +17,7 @@ const gotoRandomID = async () => {
           <NuxtImg
             src="/logo.png"
             style="display: flex;"
-            alt="amvstrm"
+            alt="DOTstream"
             quality="80"
             width="140px"
           />
@@ -61,7 +61,7 @@ const gotoRandomID = async () => {
             <v-icon icon="mdi-help" />
           </template>
         </v-list-item>
-        <v-list-item title="Github" href="https://github.com/amvstrm/amvstrm">
+        <v-list-item title="Github" href="https://github.com/DOTstream/DOTstream">
           <template #append>
             <v-icon icon="mdi-github" />
           </template>
@@ -75,7 +75,7 @@ const gotoRandomID = async () => {
           <NuxtImg
             src="/logo.png"
             style="display: flex;"
-            alt="amvstrm"
+            alt="DOTstream"
             quality="80"
             width="140px"
           />
@@ -91,7 +91,7 @@ const gotoRandomID = async () => {
       </ClientOnly>
     </v-main>
     <v-footer app height="auto" dense absolute>
-      <p>amvstrm Cambodia © Copyright {{ new Date().getFullYear() }}</p>
+      <p>DOTstream Cambodia © Copyright {{ new Date().getFullYear() }}</p>
       <v-spacer />
       <v-btn
         :prepend-icon="

@@ -26,7 +26,7 @@
         <v-btn class="mr-1" :href="/\/pwa\.*/.test(useRoute().path) ? '/pwa' : '/'" prepend-icon="mdi-home"> Go home </v-btn>
         <v-btn
           v-if="error.statusCode !== 404"
-          href="https://github.com/amvstrm/amvstrm/issues/new"
+          href=""
           target="blank"
           color="primary"
           prepend-icon="mdi-pencil"

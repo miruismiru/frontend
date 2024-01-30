@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: amvstrmn3
+    name: DOTstreamn3
     env: node
     branch: master
     plan: free
