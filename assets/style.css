@@ -12,7 +12,7 @@
 }
 
 *::-webkit-scrollbar-track {
-  background: #1F2544;
+  background: #121212;
 }
 
 *::-webkit-scrollbar-thumb {
@@ -39,7 +39,7 @@
 
 body {
   font-family: "Inter";
-  background: #1F2544;
+  background: #191919;
 }
 
 a {
@@ -51,7 +51,7 @@ a {
 .app-skip-btn {
   position: absolute;
   top: -6.5rem;
-  background-color: #1F2544;
+  background-color: #171717;
   color: #fff;
   line-height: 1rem;
   width: 6rem;
