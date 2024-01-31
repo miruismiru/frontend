@@ -580,19 +580,7 @@ const stringInstring = '""';
                   </v-chip>
                 </template>
               </v-list-item>
-              <v-list-item title="Tags">
-                <template #default>
-                  <v-chip
-                    v-for="(d, i) in anime?.tags"
-                    :key="i"
-                    class="my-1 mr-1"
-                    :to="'/search?tags=' + d.name"
-                    label=""
-                  >
-                    {{ d.name }}
-                  </v-chip>
-                </template>
-              </v-list-item>
+              
             </v-list>
           </v-card>
         </v-col>
@@ -711,6 +699,7 @@ const stringInstring = '""';
 .card-container {
   width: auto;
   position: relative;
+  
 }
 .image-area {
   position: relative;
