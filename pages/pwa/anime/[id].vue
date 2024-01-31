@@ -686,14 +686,7 @@ const stringInstring = '""';
             </v-card-text>
           </v-card>
         </v-col>
-        <v-col v-if="env.public.disqus_id" cols="12">
-        <v-card id="comment">
-          <v-card-title>Comment</v-card-title>
-          <div class="pa-10">
-            <DisqusComments :identifier="useRoute().fullPath" />
-          </div>
-        </v-card>
-      </v-col>
+        
       </v-row>
     </v-container>
   </div>
