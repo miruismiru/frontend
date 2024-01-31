@@ -252,11 +252,7 @@ const clearData = () => {
             </v-list-item>
           </v-list>
           <v-card-actions>
-            <v-btn
-              href="https://docs.amvstr.me/help/bookmark#cloud-integration"
-            >
-              Help ?
-            </v-btn>
+         
             <v-spacer></v-spacer>
             <v-btn @click="checkStatus"> Ok </v-btn>
           </v-card-actions>
@@ -282,11 +278,8 @@ const clearData = () => {
             <v-list-item title="Import" @click="importData" />
             <v-list-item title="Export" @click="exportData" />
             <v-list-item title="Clear All" @click="clear_dia = true" />
-            <v-list-item title="Configure Cloud" @click="cfg_dialog = true" />
-            <v-list-item
-              title="Help"
-              href="https://docs.amvstr.me/help/bookmark"
-            />
+      
+          
           </v-list>
         </v-menu>
       </v-col>
@@ -318,7 +311,7 @@ const clearData = () => {
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
 }
