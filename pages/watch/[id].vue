@@ -464,13 +464,7 @@ export default {
                     </div>
                   </div>
                   <v-card-actions>
-                    <v-btn
-                      prepend-icon="mdi-help"
-                      href="https://amvdocs.pages.dev/help/video-player"
-                      target="blank"
-                    >
-                      Player Help
-                    </v-btn>
+                   
                     <v-spacer />
                     <v-btn
                       icon="mdi-close"
