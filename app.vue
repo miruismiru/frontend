@@ -22,7 +22,7 @@ if (get_key.value.enabled) {
 
 <template>
   <NuxtLoadingIndicator />
-  <NuxtLayout :name="/\/pwa\.*/.test(useRoute().path) ? 'webapp' : 'default'">
+  <NuxtLayout :name="/\/pwa\.*/.test(useRoute().path) ? 'webapp' : 'webapp'">
     <NuxtPage />
   </NuxtLayout>
 </template>
