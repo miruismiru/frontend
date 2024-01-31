@@ -1,5 +1,4 @@
 <script setup>
-  window.location.href = "/pwa";
 useSeoMeta({
   ogTitle: "Home",
   ogDescription: "DOTstream - A streaming service for weebo...",
