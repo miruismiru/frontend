@@ -48,7 +48,7 @@ const {
     <v-carousel
       class="d-none d-md-block"
       hide-delimiters
-      progress="green"
+      progress="red"
       height="320px"
       :show-arrows="false"
       :cycle="true"

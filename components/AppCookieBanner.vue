@@ -43,7 +43,7 @@ export default {
     color="#2A3B4D"
     icon="mdi-cookie"
     title="We use cookies!"
-    text="We use cookies and other tracking technologies to improve your browsing experience on our website, to analyze our website traffic, and to understand where our visitors are coming from."
+    text="cookies for the bookmarks !!"
   >
     <template #default>
       <br />
@@ -55,7 +55,7 @@ export default {
       >
         Disagree
       </v-btn>
-      <v-btn class="my-2" color="green" @click="doTrkfn"> Agree ! </v-btn>
+      <v-btn class="my-2" color="green" @click="doTrkfn"> okie ! </v-btn>
     </template>
   </v-alert>
 </template>
