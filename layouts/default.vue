@@ -14,13 +14,16 @@ const gotoRandomID = async () => {
     <v-navigation-drawer v-model="drawer" temporary="">
       <v-list>
         <v-list-item>
-          <NuxtImg
-            src="https://raw.githubusercontent.com/omgdaddy/frontend/main/public/logo.png"
-            style="display: flex;"
-            alt="dotstream"
-            quality="80"
-            width="140px"
-          />
+          <div style="display: flex; justify-content: center; align-items: center;">
+  <NuxtImg
+    src="https://raw.githubusercontent.com/omgdaddy/frontend/main/public/logo.png"
+    style="display: flex;"
+    alt="dotstream"
+    quality="80"
+    width="140px"
+  />
+</div>
+
         </v-list-item>
         <ClientOnly>
           <SearchBar />
