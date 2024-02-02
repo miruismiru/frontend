@@ -6,7 +6,7 @@ export default defineEventHandler(async (event: any) => {
     // Increment guest count for each request
     guestCount++;
 
-    // You can perform additional logic here based on your requirements
+   
 
     return {
       status: 200,

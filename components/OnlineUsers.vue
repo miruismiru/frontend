@@ -11,7 +11,7 @@ import { ref, onMounted } from 'vue';
 const guestCount = ref(0);
 
 async function fetchGuestCount() {
-  const response = await fetch('/api/onlineUsers'); // replace with your API endpoint
+  const response = await fetch('/api/onlineUsers'); 
   const data = await response.json();
   guestCount.value = data.guestCount;
 }
