@@ -49,12 +49,12 @@ const {
       class="d-none d-md-block"
       hide-delimiters
       progress="red"
-      height="320px"
-      :show-arrows="false"
+      height="300px"
+      :show-arrows="true"
       :cycle="true"
     >
       <v-carousel-item
-        v-for="(item, i) in popularData?.results"
+        v-for="(item, i) in trendingData?.results"
         :key="i"
         :src="item.bannerImage"
         cover
@@ -79,9 +79,7 @@ const {
             <div class="pt-2">
               <v-btn
                 :to="'/anime/' + item.id"
-                :color="
-                  item.coverImage.color ? item.coverImage.color : 'transparent'
-                "
+                :color="'#ef233c'"
                 append-icon="mdi-open-in-new"
               >
                 Read more
@@ -126,7 +124,7 @@ const {
   <!-- DESKTOP DEVICE -->
   <v-container class="d-lg-block d-sm-none d-none" fluid>
     <v-col>
-      <h1>Trending Anime</h1>
+      <h1 style="text-align: center;">Trending Anime</h1>
       <div v-if="trpend" class="loadingBlock">
         <v-progress-circular :size="45" indeterminate />
       </div>
@@ -165,7 +163,7 @@ const {
       </v-container>
     </v-col>
     <v-col>
-      <h1>Popular Anime</h1>
+      <h1  style="text-align: center;">Popular Anime</h1>
       <div v-if="popend" class="loadingBlock">
         <v-progress-circular :size="45" indeterminate />
       </div>
@@ -206,7 +204,8 @@ const {
   </v-container>
   <!-- MOBILE DEVICE -->
   <v-container class="d-lg-none d-sm-block d-xs mb-5" fluid>
-    <h2>Trending Anime</h2>
+    
+    <h2 style="text-align: center;">Trending Anime</h2>
     <div v-if="trpend" class="loadingBlock">
       <v-progress-circular :size="45" indeterminate />
     </div>
@@ -239,7 +238,8 @@ const {
         </div>
       </v-col>
     </v-row>
-    <h2 class="mt-10">Popular Anime</h2>
+    <h2 class="mt-10"  style="text-align: center;">Popular Anime</h2>
+  
     <div v-if="popend" class="loadingBlock">
       <v-progress-circular :size="45" indeterminate />
     </div>
