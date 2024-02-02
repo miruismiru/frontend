@@ -319,7 +319,7 @@ const clearData = () => {
 @media (min-width: 768px) {
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    grid-template-columns: repeat(auto-fit);
     
   }
 }

@@ -215,10 +215,7 @@ watch(
   width: 200px;
   height: 300px;
   object-fit: cover;
-  border-top-left-radius: 0px;
-  border-top-right-radius: 50px;
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 0px;
+  
 }
 
 

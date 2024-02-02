@@ -25,7 +25,7 @@ const {
   refresh: trenddataRefresh,
   error: trenderr,
 } = useFetch(
-  `${env.public.API_URL}/api/${env.public.version}/trending?limit=12`,
+  `${env.public.API_URL}/api/${env.public.version}/trending?limit=20`,
   {
     cache: "force-cache",
   }
@@ -36,7 +36,7 @@ const {
   refresh: popdataRefresh,
   error: poperr,
 } = useFetch(
-  `${env.public.API_URL}/api/${env.public.version}/popular?limit=12`,
+  `${env.public.API_URL}/api/${env.public.version}/popular?limit=20`,
   {
     cache: "force-cache",
   }
@@ -73,6 +73,7 @@ const {
                 display: -webkit-box;
                 -webkit-box-orient: vertical;
                 -webkit-line-clamp: 2;
+                
               "
               v-html="item.description"
             />
@@ -95,18 +96,30 @@ const {
     <ClientOnly>
       <div v-if="history_state?.latest_anime_watched">
         <v-alert
-          class="mt-4"
-          icon="mdi-history"
-          title="Continue Watching : "
-          :text="`${history_state?.latest_anime_watched?.title} Episode ${
-            history_state?.latest_anime_watched?.curr_ep
-          } ${history_state?.latest_anime_watched?.isDub ? 'Dub' : 'Sub'}`"
-          closable
-        >
+  class="mt-4"
+  icon="mdi-history"
+  title="Continue Watching ᕙ(`▿´)ᕗ "
+  :text="`${history_state?.latest_anime_watched?.title} Episode ${history_state?.latest_anime_watched?.curr_ep} ${history_state?.latest_anime_watched?.isDub ? 'Dub' : 'Sub'}`"
+  closable
+  style="background-color: rgba(27, 27, 27, 0.712);"
+>
+
+     
+        <template #prepend>
+          <v-img
+    :width="100"
+    cover
+    :src="history_state?.latest_anime_watched?.imgsrc"
+    style="border-radius: 8px; box-shadow: 0 2px 4px rgb(43, 43, 43);"
+  ></v-img>
+
+            </template>
           <template #default>
+            
             <br />
             <v-btn
               class="my-2"
+              color="#e5383b"
               :to="
                 /\/pwa\.*/.test(useRoute().path)
                   ? `/pwa/watch/${history_state?.latest_anime_watched?.id}-${history_state?.latest_anime_watched?.ep_id}`
@@ -308,7 +321,7 @@ const {
 
 @media (min-width: 768px) {
   .grid {
-    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    grid-template-columns: repeat(auto-fit );
   }
 }
 
@@ -319,5 +332,6 @@ const {
   padding: 2.5rem;
   height: 320px;
   gap: 1rem;
+  
 }
 </style>
