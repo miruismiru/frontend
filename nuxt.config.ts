@@ -1,4 +1,5 @@
 export default defineNuxtConfig({
+  
   app: {
     head: {
       titleTemplate: "%s - DOTstream",
@@ -95,6 +96,9 @@ export default defineNuxtConfig({
     },
     "/api/getData": {
       cors: true
+    },
+    "/api/onlineUsers": {
+      cors: true
     }
   },
 
@@ -107,6 +111,7 @@ export default defineNuxtConfig({
     "nuxt-disqus",
     "vuetify-nuxt-module",
     "@nuxt/image",
+    
   ],
   disqus: {
     shortname: process.env.DISQUS_ID,
