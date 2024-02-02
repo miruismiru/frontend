@@ -258,7 +258,7 @@ const clearData = () => {
     <v-row align="center">
       <v-col>
         <h1>Bookmarks</h1>
-        <p>Your bookmark's anime</p>
+        <p>Your bookmark's  (ง︡'-'︠)ง</p>
       </v-col>
       <v-col class="d-flex justify-end">
         <v-menu location="bottom">
@@ -284,7 +284,7 @@ const clearData = () => {
     <div v-if="bk_data.length === 0" style="height: 600px">
       <div class="text-center">
         <v-icon color="grey--text" size="100"> mdi-bookmark-outline </v-icon>
-        <h2>No Bookmarks</h2>
+        <h2>No Bookmarks  (ง︡'-'︠)ง</h2>
       </div>
     </div>
     <div class="grid">

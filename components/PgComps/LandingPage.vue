@@ -124,7 +124,7 @@ const {
   <!-- DESKTOP DEVICE -->
   <v-container class="d-lg-block d-sm-none d-none" fluid>
     <v-col>
-      <h1 style="text-align: center;">Trending Anime</h1>
+      <h1 style="text-align: center;">Trending (ง︡'-'︠)ง</h1>
       <div v-if="trpend" class="loadingBlock">
         <v-progress-circular :size="45" indeterminate />
       </div>
@@ -163,7 +163,7 @@ const {
       </v-container>
     </v-col>
     <v-col>
-      <h1  style="text-align: center;">Popular Anime</h1>
+      <h1  style="text-align: center;">Popular （っ＾▿＾）</h1>
       <div v-if="popend" class="loadingBlock">
         <v-progress-circular :size="45" indeterminate />
       </div>
@@ -205,7 +205,7 @@ const {
   <!-- MOBILE DEVICE -->
   <v-container class="d-lg-none d-sm-block d-xs mb-5" fluid>
     
-    <h2 style="text-align: center;">Trending Anime</h2>
+    <h2 style="text-align: center;">Trending (ง︡'-'︠)ง</h2>
     <div v-if="trpend" class="loadingBlock">
       <v-progress-circular :size="45" indeterminate />
     </div>
@@ -238,7 +238,7 @@ const {
         </div>
       </v-col>
     </v-row>
-    <h2 class="mt-10"  style="text-align: center;">Popular Anime</h2>
+    <h2 class="mt-10"  style="text-align: center;">Popular （っ＾▿＾）</h2>
   
     <div v-if="popend" class="loadingBlock">
       <v-progress-circular :size="45" indeterminate />

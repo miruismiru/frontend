@@ -262,7 +262,7 @@ const clearData = () => {
     <v-row align="center">
       <v-col>
         <h1>Bookmarks</h1>
-        <p>Your bookmark's anime</p>
+        <p>Your bookmark's (ง︡'-'︠)ง</p>
       </v-col>
       <v-col class="d-flex justify-end">
         <v-menu location="bottom">
@@ -311,7 +311,7 @@ const clearData = () => {
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
 }
@@ -320,6 +320,7 @@ const clearData = () => {
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    
   }
 }
 </style>

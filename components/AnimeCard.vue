@@ -2,13 +2,13 @@
   <div
     class="card"
     :style="{
-      '--color-txt': animeColor,
+      '--color-txt': '#e5383b',
     }"
   >
     <div class="ybk-ctn">
       <v-chip
         class="d-none d-md-flex d-lg-flex"
-        color="warning"
+        color="#e5383b"
         variant="elevated"
         size="small"
         label
@@ -58,7 +58,7 @@
           props?.status === 'FINISHED'
             ? 'success'
             : props?.status === 'RELEASING'
-            ? 'warning'
+            ? '#e5383b'
             : props?.status === 'NOT_YET_RELEASED'
             ? 'info'
             : props?.status === 'CANCELLED'
@@ -73,7 +73,7 @@
             ? "Released"
             : props?.status === "NOT_YET_RELEASED"
             ? "Soon"
-            : "No data"
+            : "No data :("
         }}
       </v-chip>
     </div>
@@ -215,8 +215,15 @@ watch(
   width: 200px;
   height: 300px;
   object-fit: cover;
-  border-radius: 4px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 0px;
 }
+
+
+
+
 
 .addbkm {
   margin: 1rem;
