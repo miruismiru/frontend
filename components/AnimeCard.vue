@@ -148,7 +148,7 @@ const isBookmarked = (id) => {
 let isAlreadyBookmarked = isBookmarked(props.id);
 
 const bookmarkStatus = ref(
-  isAlreadyBookmarked ? "mdi-bookmark" : "mdi-bookmark-outline"
+  isAlreadyBookmarked ? "mdi-heart-pulse" : "mdi-heart-outline"
 );
 
 const get_key = useStorage("cloud-cfg", {});
@@ -178,13 +178,13 @@ function addBookmark() {
     id: props.id,
     title: props.title,
     imgsrc: props.imgsrc,
-    color: props.animeColor,
+    color: 'props.animeColor',
     type: props.type,
     totalEp: props.totalEp,
     year: props.year,
     status: props.status
   });
-  bookmarkStatus.value = "mdi-bookmark"; // Update bookmarkStatus
+  bookmarkStatus.value = "mdi-heart-pulse"; // Update bookmarkStatus
   saveBookmarks(bookmarks);
 }
 
@@ -192,13 +192,13 @@ function removeBookmark() {
   const bookmarks = state.value;
   const index = bookmarks.findIndex((item) => item.id == props.id);
   bookmarks.splice(index, 1);
-  bookmarkStatus.value = "mdi-bookmark-outline"; // Update bookmarkStatus
+  bookmarkStatus.value = "mdi-heart-outline"; // Update bookmarkStatus
   saveBookmarks(bookmarks);
 }
 watch(
   () => isAlreadyBookmarked,
   (newValue) => {
-    bookmarkStatus.value = newValue ? "mdi-bookmark" : "mdi-bookmark-outline";
+    bookmarkStatus.value = newValue ? "mdi-heart-pulse" : "mdi-heart-outline";
   }
 );
 </script>

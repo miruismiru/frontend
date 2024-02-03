@@ -187,17 +187,10 @@ const clearData = () => {
 };
 </script>
 <template>
-  <v-breadcrumbs>
-    <template #prepend>
-      <v-icon size="small" icon="mdi-home"></v-icon>
-    </template>
-    <v-breadcrumbs-item title="Home" to="/pwa" />
-    <v-breadcrumbs-divider />
-    <v-breadcrumbs-item title="Bookmarker" />
-  </v-breadcrumbs>
+ 
   <v-container>
     <ClientOnly>
-      <v-dialog v-model="app_dialog" eager scrim="#191919" width="auto">
+      <v-dialog v-model="app_dialog" eager scrim="" width="auto">
         <v-card>
           <v-card-title>
             {{ dialog_title }}
@@ -261,8 +254,7 @@ const clearData = () => {
     </ClientOnly>
     <v-row align="center">
       <v-col>
-        <h1>Bookmarks</h1>
-        <p>Your bookmark's (ง︡'-'︠)ง</p>
+        <h2> bookmark's </h2>
       </v-col>
       <v-col class="d-flex justify-end">
         <v-menu location="bottom">
@@ -287,8 +279,8 @@ const clearData = () => {
     <v-divider class="my-5" />
     <div v-if="bk_data.length === 0" style="height: 600px">
       <div class="text-center">
-        <v-icon color="grey--text" size="100"> mdi-bookmark-outline </v-icon>
-        <h2>No Bookmarks</h2>
+        <h2 color="#e5383b">/ᐠ｡ꞈ｡ᐟ\</h2>
+        <p>Sorry dude !! Got nothing here !!</p>
       </div>
     </div>
     <div class="grid">

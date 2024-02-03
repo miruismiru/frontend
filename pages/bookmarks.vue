@@ -283,7 +283,7 @@ const clearData = () => {
     <v-divider class="my-5" />
     <div v-if="bk_data.length === 0" style="height: 600px">
       <div class="text-center">
-        <v-icon color="grey--text" size="100"> mdi-bookmark-outline </v-icon>
+        <v-icon color="grey--text" size="100"> mdi-heart-outline </v-icon>
         <h2>No Bookmarks  (ง︡'-'︠)ง</h2>
       </div>
     </div>

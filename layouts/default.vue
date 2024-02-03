@@ -41,7 +41,7 @@ const gotoRandomID = async () => {
         <v-list-item
           title="Bookmarker"
           to="/bookmarks"
-          append-icon="mdi-bookmark-box-multiple"
+          append-icon="mdi-heart-pulse-box-multiple"
         />
         <v-list-item
           title="Randomizer"

@@ -9,28 +9,22 @@ import GuestCount from '~/components/OnlineUsers.vue';
     <v-main>
       <slot />
     </v-main>
-    <v-bottom-navigation :elevation="8" grow>
+    <v-bottom-navigation :elevation="8" grow   active
+      color="#e5383b">
       <v-btn to="/pwa" value="home">
-        <v-icon>mdi-home</v-icon>
-        Home
+        <v-icon>mdi-ghost</v-icon>
       </v-btn>
  
-      <!-- <v-btn to="/pwa/search" value="search">
-        <v-icon>mdi-magnify</v-icon>
-        Search
-      </v-btn> -->
+   
       <v-btn to="/pwa/bookmarks" value="bookmark">
-        <v-icon>mdi-book</v-icon>
-        Bookmarker
+        <v-icon>mdi-heart-pulse</v-icon>
       </v-btn>
-      <v-btn to="" value="aboxut">
-
-<v-icon>mdi-eye-plus-outline</v-icon>
-<GuestCount />
-</v-btn>
+     <v-btn to="/pwa/search" value="search">
+        <v-icon>mdi-map-search  </v-icon>
+      </v-btn>
       <v-btn to="/pwa/more" value="about">
-        <v-icon>mdi-menu</v-icon>
-        More 
+        <v-icon>mdi-eye-plus-outline</v-icon>
+        <GuestCount />
       </v-btn>
       
 

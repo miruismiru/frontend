@@ -25,13 +25,13 @@ const debouncedSearch = debounce(async (query) => {
     <template #activator="{ props }">
       <v-text-field
         v-model="search"
-        variant="solo"
-        color="green"
-        label="Search"
+        variant="outlined"
+        color="#e5383b"
+        label="Name of The Anime ┐(‘ ～`;)┌ ??? "
         flat
         single-line
         hide-details
-        prepend-inner-icon="mdi-magnify"
+        prepend-inner-icon="mdi-map-search"
         v-bind="props"
         @update:model-value="debouncedSearch(search)"
       />
@@ -39,7 +39,7 @@ const debouncedSearch = debounce(async (query) => {
     
       <v-card>
         <v-list lines="two">
-          <v-list-item title="Search result" />
+          <v-list-item title="Results ᕕ( ╯°□° )ᕗ" />
           <v-divider />
           <v-list-item
             v-for="item in searchResults?.results"

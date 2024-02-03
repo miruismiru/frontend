@@ -1,7 +1,7 @@
 // GuestCount.vue
 <template>
   <div>
-    <p>Eyes : {{ guestCount }}</p>
+    <p>{{ guestCount }}</p>
   </div>
 </template>
 

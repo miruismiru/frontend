@@ -62,7 +62,7 @@ export default {
     const bookmarks = ref(state.value);
     const isAlreadyBookmarked = ref(isBookmarked(props.id));
     const bookmarkStatus = ref(
-      isAlreadyBookmarked.value ? "mdi-bookmark-outline" : "mdi-bookmark"
+      isAlreadyBookmarked.value ? "mdi-heart-outline" : "mdi-heart-pulse"
     );
     const bookmarkColor = ref(isAlreadyBookmarked.value ? "white" : "warning");
     const get_key = useStorage("cloud-cfg", {});
@@ -97,7 +97,7 @@ export default {
         year: props.year,
         status: props.status,
       });
-      bookmarkStatus.value = "mdi-bookmark";
+      bookmarkStatus.value = "mdi-heart-pulse";
       bookmarkColor.value = "white";
       saveBookmarks(bookmarks.value);
     }
@@ -105,7 +105,7 @@ export default {
     function removeBookmark() {
       const index = bookmarks.value.findIndex((item) => item.id == props.id);
       bookmarks.value.splice(index, 1);
-      bookmarkStatus.value = "mdi-bookmark-outline";
+      bookmarkStatus.value = "mdi-heart-outline";
       bookmarkColor.value = "warning";
       saveBookmarks(bookmarks.value);
     }
@@ -123,8 +123,8 @@ export default {
       () => isAlreadyBookmarked.value,
       (newValue) => {
         bookmarkStatus.value = newValue
-          ? "mdi-bookmark-outline"
-          : "mdi-bookmark";
+          ? "mdi-heart-outline"
+          : "mdi-heart-pulse";
         bookmarkColor.value = newValue ? "white" : "warning";
       }
     );

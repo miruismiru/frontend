@@ -254,25 +254,20 @@ if (query.q || query.genres || query.tags) {
 </script>
 <template>
   <v-breadcrumbs>
-    <template #prepend>
-      <v-icon size="small" icon="mdi-home"></v-icon>
-    </template>
-    <v-breadcrumbs-item title="Home" to="/pwa" />
-    <v-breadcrumbs-divider />
-    <v-breadcrumbs-item title="Search" />
+  
   </v-breadcrumbs>
   <v-container>
-    <h1 class="mb-2">Search Anime</h1>
+    <h1 class="mb-2">Search </h1>
     <v-text-field
       v-model="search"
-      variant="solo"
-      color="green"
-      label="Search Anime"
+      variant="outlined"
+        color="#e5383b"
+        label="Name of The Anime ┐(‘ ～`;)┌ ??? "
       flat
       clearable
       single-line
       hide-details
-      prepend-inner-icon="mdi-magnify"
+      prepend-inner-icon="mdi-map-search"
       @update:model-value="debouncedSearch()"
     />
     <v-row class="my-1">
@@ -280,7 +275,7 @@ if (query.q || query.genres || query.tags) {
         <v-combobox
           v-model="selectGenres"
           :items="genreItems"
-          variant="solo"
+          variant="outlined"
           label="Genres"
           multiple
           @update:model-value="debouncedSearch()"
@@ -290,7 +285,7 @@ if (query.q || query.genres || query.tags) {
         <v-combobox
           v-model="selectTags"
           :items="tagItems"
-          variant="solo"
+          variant="outlined"
           label="Tags"
           multiple
           @update:model-value="debouncedSearch()"
@@ -301,8 +296,8 @@ if (query.q || query.genres || query.tags) {
       <v-card-text v-if="searchResults?.results ? false : true">
         <div class="loadingBlock" style="height: 40vh">
           <div class="d-flex flex-column align-center">
-            <v-icon size="5rem">mdi-magnify</v-icon>
-            <h2>Search Anime</h2>
+            <v-icon size="5rem">mdi-map-search</v-icon>
+            <h2>have a look around  .-.</h2>
           </div>
         </div>
       </v-card-text>
