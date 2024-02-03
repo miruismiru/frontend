@@ -352,7 +352,7 @@ export default {
       <v-col cols="12" style="padding: 0">
         <v-breadcrumbs>
           <template #prepend>
-            <v-icon size="small" icon="mdi-home"></v-icon>
+            <v-icon size="small" icon="mdi-ghost"></v-icon>
           </template>
           <v-breadcrumbs-item title="Home" to="/pwa" />
           <v-breadcrumbs-divider />
@@ -360,7 +360,11 @@ export default {
           <v-breadcrumbs-divider />
           <v-breadcrumbs-item
             :title="'Episode ' + getGogoID.split('-episode-')[1]"
-          />
+            
+          />   
+      
+
+         
         </v-breadcrumbs>
       </v-col>
       <v-col cols="12" lg="8">
@@ -423,7 +427,7 @@ export default {
             <div class="d-flex align-center">
               <v-btn
                 class="mr-2"
-                color="blue"
+                color="#e5383b"
                 :href="'/download/' + useRoute().params.id"
                 icon="mdi-download"
                 target="blank"
@@ -433,14 +437,14 @@ export default {
               <v-dialog
                 v-model="loadSettingDialog"
                 width="auto"
-                scrim="#202020"
+                scrim="grey"
                 max-width="500px"
                 scrollable
               >
                 <template #activator="{ props }">
                   <v-btn
                     class="mr-2"
-                    color="gray"
+                    color="#e5383b"
                     icon="mdi-cog"
                     variant="plain"
                     v-bind="props"
@@ -452,7 +456,7 @@ export default {
                   <div class="ma-4">
                     <v-radio-group v-model="switchplyr">
                       <v-radio
-                        label="Integrated Player (Recommended)"
+                        label="DOT Stream "
                         :value="1"
                       ></v-radio>
                       <v-radio label="Plyr" :value="2"></v-radio>
@@ -506,7 +510,7 @@ export default {
               :key="i"
               :to="'/pwa/watch/' + getID + '-' + epitm.id"
             >
-              <v-list-item-title>{{ epitm.title }}</v-list-item-title>
+              <v-list-item-title></v-list-item-title>
               <v-list-item-subtitle>
                 Episode {{ epitm.id.split("-episode-")[1] }}
               </v-list-item-subtitle>

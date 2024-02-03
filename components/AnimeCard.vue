@@ -25,7 +25,7 @@
     <NuxtLink
       v-bind="props"
       :to="
-        /\/pwa\.*/.test(useRoute().path) ? '/pwa/anime/' + id : '/anime/' + id
+        /\/pwa\.*/.test(useRoute().path) ? '/pwa/anime/' + id : '/pwa/anime/' + id
       "
     >
       <img class="card-img" loading="lazy" :src="imgsrc" :alt="imgalt" />
@@ -80,7 +80,7 @@
     <NuxtLink
       class="card-title"
       :to="
-        /\/pwa\.*/.test(useRoute().path) ? '/pwa/anime/' + id : '/anime/' + id
+        /\/pwa\.*/.test(useRoute().path) ? '/pwa/anime/' + id : '/pwa/anime/' + id
       "
     >
       <span>{{ title }}</span>

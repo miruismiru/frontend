@@ -79,7 +79,7 @@ const {
             />
             <div class="pt-2">
               <v-btn
-                :to="'/anime/' + item.id"
+                :to="'/pwa/anime/' + item.id"
                 :color="'#ef233c'"
                 append-icon="mdi-open-in-new"
               >
@@ -123,7 +123,7 @@ const {
               :to="
                 /\/pwa\.*/.test(useRoute().path)
                   ? `/pwa/watch/${history_state?.latest_anime_watched?.id}-${history_state?.latest_anime_watched?.ep_id}`
-                  : `/watch/${history_state?.latest_anime_watched?.id}-${history_state?.latest_anime_watched?.ep_id}`
+                  : `/pwa/watch/${history_state?.latest_anime_watched?.id}-${history_state?.latest_anime_watched?.ep_id}`
               "
               prepend-icon="mdi-play"
             >
