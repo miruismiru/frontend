@@ -46,19 +46,19 @@ const {
 <template>
   <ClientOnly>
     <v-carousel
-      class="d-none d-md-block"
+      class="d-md-block"
       hide-delimiters
       progress="red"
       height="300px"
       :show-arrows="true"
       :cycle="true"
     >
-      <v-carousel-item
-        v-for="(item, i) in trendingData?.results"
-        :key="i"
-        :src="item.bannerImage"
-        cover
-      >
+        <v-carousel-item
+          v-for="(item, i) in trendingData?.results"
+          :key="i"
+          :src="item.bannerImage"
+          cover
+        >
         <div class="carousel-item">
           <img :src="item.coverImage.large" alt="Carousel Image" />
           <div class="d-flex flex-column pa-2 justify-center">
@@ -98,8 +98,8 @@ const {
         <v-alert
   class="mt-4"
   icon="mdi-history"
-  title="Continue Watching ᕙ(`▿´)ᕗ "
-  :text="`${history_state?.latest_anime_watched?.title} Episode ${history_state?.latest_anime_watched?.curr_ep} ${history_state?.latest_anime_watched?.isDub ? 'Dub' : 'Sub'}`"
+  title="Continue Watching  "
+  :text="`${history_state?.latest_anime_watched?.title} Episode ${history_state?.latest_anime_watched?.curr_ep} ${history_state?.latest_anime_watched?.isDub ? 'Dub ᕙ(`▿´)ᕗ' : 'Sub ᕙ(`▿´)ᕗ'}`"
   closable
   style="background-color: rgba(27, 27, 27, 0.712);"
 >
@@ -216,6 +216,10 @@ const {
     </v-col>
   </v-container>
   <!-- MOBILE DEVICE -->
+
+
+
+  
   <v-container class="d-lg-none d-sm-block d-xs mb-5" fluid>
     
     <h2 style="text-align: center;">Trending (ง︡'-'︠)ง</h2>
@@ -237,7 +241,7 @@ const {
     <v-row v-else>
       <v-col class="media-scrolling">
         <div v-for="d in trendingData?.results" :key="d.id">
-          <AnimeCard
+          <Mobilecard
             :id="d.id"
             :title="d.title.userPreferred"
             :imgsrc="d.coverImage.large"
@@ -269,9 +273,9 @@ const {
       </v-btn>
     </div>
     <v-row v-else>
-      <v-col class="media-scrolling">
+      <v-col class="grid">
         <div v-for="d in popularData?.results" :key="d.id">
-          <AnimeCard
+          <Mobilecard
             :id="d.id"
             :title="d.title.userPreferred"
             :imgsrc="d.coverImage.large"
@@ -303,7 +307,7 @@ const {
   grid-row-gap: 0px;
 }
 
-.media-scrolling {
+/* .media-scrolling {
   --_spacer: 0.6rem;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
@@ -313,7 +317,7 @@ const {
   overscroll-behavior-inline: contain;
   scroll-snap-type: inline mandatory;
   scroll-padding-inline: var(--_spacer, 1rem);
-}
+} */
 
 .media-scrolling > * {
   scroll-snap-align: start;
@@ -326,12 +330,14 @@ const {
 }
 
 .carousel-item {
-  background-color: rgba(0, 0, 0, 0.7);
+  background: linear-gradient(to bottom, transparent, rgba(18, 18, 18, 0.95));
   display: flex;
   justify-content: center;
   padding: 2.5rem;
   height: 320px;
   gap: 1rem;
-  
 }
+
+
+
 </style>
