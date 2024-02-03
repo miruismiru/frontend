@@ -2,18 +2,20 @@
 
   <template>
 
-     <NuxtLink
+   
+    <v-card
+  class="mx-auto mb-10" 
+  max-width="400"
+>  <NuxtLink
       v-bind="props"
       :to="
         /\/pwa\.*/.test(useRoute().path) ? '/pwa/anime/' + id : '/pwa/anime/' + id
       "
+  
     >
-    <v-card
-  class="mx-auto mb-10" 
-  max-width="400"
->
   <div class="background-container">
-    <div class="background" :style="{ backgroundImage: 'url(' + imgsrc + ')' }"></div>
+    <div class="background" :style=" { backgroundImage: 'url(' + imgsrc + ')' }"></div>
+
     <v-img
       style="object-fit: cover;"
       width="400"
@@ -21,14 +23,22 @@
       loading="lazy"
       :src="imgsrc"
       :alt="imgalt"
-    ></v-img>
+    > </v-img>
   </div>
-  <v-card-subtitle class="text-center pt-4 text-wrap">
-  <h3>{{ title }} </h3>   
+</NuxtLink>
+
+  <v-card-subtitle class="text-center pt-1 text-wrap">
+  <h3>{{ title }} <v-icon
+        class="addbkm"
+        :icon="bookmarkStatus"
+        size="28"
+        @click="bookmarkHandler"
+      /></h3>   
 </v-card-subtitle>
 
   
 <v-card-text class="text-center">
+
   <v-chip
     v-if="props.type !== ''"
     label
@@ -95,7 +105,6 @@
 
 </v-card>
 
-</NuxtLink>
 </template>
 
 
@@ -236,7 +245,6 @@ watch(
 }
 .background-container {
   position: relative;
-
 }
 
 .background {
@@ -246,9 +254,15 @@ watch(
   right: 0;
   bottom: 0;
   background-size: cover;
-  filter: blur(3px); /* Adjust the blur value as needed */
   z-index: -1;
+  filter: blur(2px);
+
 }
+
+
+
+
+
 
 
 .addbkm {

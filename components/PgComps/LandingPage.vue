@@ -58,8 +58,9 @@ const {
           :key="i"
           :src="item.bannerImage"
           cover
+          class="s"
         >
-        <div class="carousel-item">
+        <div class="carousel-item carousel-blur">
           <img :src="item.coverImage.large" alt="Carousel Image" />
           <div class="d-flex flex-column pa-2 justify-center">
             <h2>{{ item.title.userPreferred }}</h2>
@@ -137,7 +138,7 @@ const {
   <!-- DESKTOP DEVICE -->
   <v-container class="d-lg-block d-sm-none d-none" fluid>
     <v-col>
-      <h1 style="text-align: center;">Trending (ง︡'-'︠)ง</h1>
+      <h1 style="text-align: center;">Trending </h1>
       <div v-if="trpend" class="loadingBlock">
         <v-progress-circular :size="45" indeterminate />
       </div>
@@ -176,7 +177,7 @@ const {
       </v-container>
     </v-col>
     <v-col>
-      <h1  style="text-align: center;">Popular （っ＾▿＾）</h1>
+      <h1  style="text-align: center;">Popular </h1>
       <div v-if="popend" class="loadingBlock">
         <v-progress-circular :size="45" indeterminate />
       </div>
@@ -222,7 +223,7 @@ const {
   
   <v-container class="d-lg-none d-sm-block d-xs mb-5" fluid>
     
-    <h2 style="text-align: center;">Trending (ง︡'-'︠)ง</h2>
+    <h2 style="text-align: center;">Trending </h2>
     <div v-if="trpend" class="loadingBlock">
       <v-progress-circular :size="45" indeterminate />
     </div>
@@ -255,7 +256,7 @@ const {
         </div>
       </v-col>
     </v-row>
-    <h2 class="mt-10"  style="text-align: center;">Popular （っ＾▿＾）</h2>
+    <h2 class="mt-10"  style="text-align: center;">Popular </h2>
   
     <div v-if="popend" class="loadingBlock">
       <v-progress-circular :size="45" indeterminate />
@@ -331,6 +332,7 @@ const {
 
 .carousel-item {
   background: linear-gradient(to bottom, transparent, rgba(18, 18, 18, 0.95));
+
   display: flex;
   justify-content: center;
   padding: 2.5rem;
@@ -338,6 +340,22 @@ const {
   gap: 1rem;
 }
 
+
+.carousel-blur {
+  position: relative;
+}
+
+.carousel-blur::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.048), rgb(0, 0, 0));
+  filter: blur(10px);
+  z-index: -1;
+}
 
 
 </style>

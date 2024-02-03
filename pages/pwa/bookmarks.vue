@@ -254,7 +254,7 @@ const clearData = () => {
     </ClientOnly>
     <v-row align="center">
       <v-col>
-        <h2> bookmark's </h2>
+        <h2> bookmarks </h2>
       </v-col>
       <v-col class="d-flex justify-end">
         <v-menu location="bottom">
@@ -283,7 +283,9 @@ const clearData = () => {
         <p>Sorry dude !! Got nothing here !!</p>
       </div>
     </div>
-    <div class="grid">
+
+    <v-container class="d-lg-block d-sm-none d-none" fluid>
+      <div class="grid">
       <div v-for="(d, i) in bk_data" :key="i" class="d-flex justify-center">
         <AnimeCard
           :id="d.id"
@@ -297,6 +299,30 @@ const clearData = () => {
         />
       </div>
     </div>
+      </v-container>
+
+
+
+    <v-container class="d-lg-none d-sm-block d-xs mb-5" fluid>
+    <div class="grid">
+      <div v-for="(d, i) in bk_data" :key="i" class="d-flex justify-center">
+        <Mobilecard
+          :id="d.id"
+          :title="d.title"
+          :imgsrc="d.imgsrc"
+          :imgalt="d.id"
+          :anime-color="d.color"
+          :year="d.year"
+          :type="d.type"
+          :status="d.status"
+        />
+      </div>
+    </div>
+
+  </v-container>
+
+
+
   </v-container>
 </template>
 <style>
