@@ -25,7 +25,7 @@ const {
   refresh: trenddataRefresh,
   error: trenderr,
 } = useFetch(
-  `${env.public.API_URL}/api/${env.public.version}/trending?limit=12`,
+  `${env.public.API_URL}/api/${env.public.version}/trending?limit=9`,
   {
     cache: "force-cache",
   }
@@ -135,7 +135,7 @@ const {
   <v-container class="d-lg-block d-sm-none d-none" fluid>
     <v-col>
       <h1 style="text-align: center;">
-Trending
+        RECENT RELEASES 
 </h1>
       <div v-if="trpend" class="loadingBlock">
         <v-progress-circular :size="45" indeterminate />
@@ -145,50 +145,9 @@ Trending
           dense
           type="error"
           title="Error"
-          text="Error loading trending anime!"
+          text="Error loading recent anime! ._. sorry dude"
         />
         <v-btn @click="trenddataRefresh()">
-          Reload?
-          <v-icon>mdi-reload</v-icon>
-        </v-btn>
-      </div>
-      <v-container v-else fluid>
-        <div class="grid">
-          <div
-            v-for="(d, i) in trendingData?.results"
-            :key="i"
-            class="d-flex justify-center"
-          >
-            <AnimeCard
-              :id="d.id"
-              :title="d.title.userPreferred"
-              :imgsrc="d.coverImage.large"
-              :imgalt="d.id"
-              :anime-color="d.coverImage.color"
-              :year="d.seasonYear"
-              :type="d.format"
-              :total-ep="d.episodes"
-              :status="d.status"
-            />
-          </div>
-        </div>
-      </v-container>
-    </v-col>
-    <v-col>
-      <h1 style="text-align: center;">
-Recents
-</h1>
-      <div v-if="popend" class="loadingBlock">
-        <v-progress-circular :size="45" indeterminate />
-      </div>
-      <div v-else-if="poperr">
-        <v-alert
-          dense
-          type="error"
-          title="Error"
-          text="Error loading popular anime!"
-        />
-        <v-btn @click="popdataRefresh()">
           Reload?
           <v-icon>mdi-reload</v-icon>
         </v-btn>
@@ -215,6 +174,47 @@ Recents
         </div>
       </v-container>
     </v-col>
+    <v-col>
+      <h1 style="text-align: center;">
+Trending
+</h1>
+      <div v-if="popend" class="loadingBlock">
+        <v-progress-circular :size="45" indeterminate />
+      </div>
+      <div v-else-if="poperr">
+        <v-alert
+          dense
+          type="error"
+          title="Error"
+          text="Error loading popular anime!"
+        />
+        <v-btn @click="popdataRefresh()">
+          Reload?
+          <v-icon>mdi-reload</v-icon>
+        </v-btn>
+      </div>
+      <v-container v-else fluid>
+        <div class="grid">
+          <div
+            v-for="(d, i) in trendingData?.results"
+            :key="i"
+            class="d-flex justify-center"
+          >
+            <AnimeCard
+              :id="d.id"
+              :title="d.title.userPreferred"
+              :imgsrc="d.coverImage.large"
+              :imgalt="d.id"
+              :anime-color="d.coverImage.color"
+              :year="d.seasonYear"
+              :type="d.format"
+              :total-ep="d.episodes"
+              :status="d.status"
+            />
+          </div>
+        </div>
+      </v-container>
+    </v-col>
   </v-container>
   <!-- MOBILE DEVICE -->
 
@@ -223,7 +223,7 @@ Recents
   
   <v-container class="d-lg-none d-sm-block d-xs mb-5" fluid>
 <h2 style="text-align: center;">
-Trending
+  RECENT RELEASES 
 </h2>
     <div v-if="trpend" class="loadingBlock">
       <v-progress-circular :size="45" indeterminate />
@@ -242,7 +242,7 @@ Trending
     </div>
     <v-row v-else>
       <v-col class="media-scrolling">
-        <div v-for="d in trendingData?.results" :key="d.id">
+        <div v-for="d in popularData?.data" :key="d.id">
           <Mobilecard
             :id="d.id"
             :title="d.title.userPreferred"
@@ -258,7 +258,7 @@ Trending
       </v-col>
     </v-row>
     <h2 class="mt-10" style="text-align: center;">
-Recents
+Trending
 </h2>
   
     <div v-if="popend" class="loadingBlock">
@@ -278,7 +278,7 @@ Recents
     </div>
     <v-row v-else>
       <v-col class="grid">
-        <div v-for="d in popularData?.data" :key="d.id">
+        <div v-for="d in trendingData?.results" :key="d.id">
           <Mobilecard
             :id="d.id"
             :title="d.title.userPreferred"
