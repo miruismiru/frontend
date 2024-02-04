@@ -21,26 +21,20 @@ useHead({
   <v-container>
     <div style="height: fit-content; display: grid; place-items: center; background-color: #212121; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
       <div class="pa-5" style="background-color: #212121; ">
-      
-        <header class="banner">
+<header class="banner">
       <img src="/logo2.png" alt="logo" class="banner-image" />
       <p>
           i will think about something to write or you can send me something to write ... 
         </p>
-
-    </header>
+</header>
 
         <div class="mt-2">
-         
-        </div>
+</div>
         <div class="my-">
-    
-         
-          You can consider donating us to keep it alive! <br>
+You can consider donating us to keep it alive! <br>
 
           discord @is_coffee
-        
-        </div>
+</div>
       </div>
     </div>
   </v-container>

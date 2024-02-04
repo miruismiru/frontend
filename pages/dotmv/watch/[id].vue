@@ -478,8 +478,7 @@ export default {
                     </div>
                   </div>
                   <v-card-actions>
-                    
-                    <v-spacer />
+<v-spacer />
                     <v-btn
                       icon="mdi-close"
                       @click="loadSettingDialog = false"

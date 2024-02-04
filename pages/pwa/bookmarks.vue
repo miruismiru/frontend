@@ -187,8 +187,7 @@ const clearData = () => {
 };
 </script>
 <template>
- 
-  <v-container>
+<v-container>
     <ClientOnly>
       <v-dialog v-model="app_dialog" eager scrim="" width="auto">
         <v-card>
@@ -199,7 +198,9 @@ const clearData = () => {
             {{ dialog_text }}
           </v-card-text>
           <v-card-actions>
-            <v-btn block @click="app_dialog = false"> Ok </v-btn>
+            <v-btn block @click="app_dialog = false">
+Ok
+</v-btn>
           </v-card-actions>
         </v-card>
       </v-dialog>
@@ -210,8 +211,12 @@ const clearData = () => {
             Are you sure do you want to clear all of the data?
           </v-card-text>
           <v-card-actions>
-            <v-btn @click="clear_dia = false"> Cancel </v-btn>
-            <v-btn @click="clearData"> Clear All </v-btn>
+            <v-btn @click="clear_dia = false">
+Cancel
+</v-btn>
+            <v-btn @click="clearData">
+Clear All
+</v-btn>
           </v-card-actions>
         </v-card>
       </v-dialog>
@@ -245,9 +250,10 @@ const clearData = () => {
             </v-list-item>
           </v-list>
           <v-card-actions>
-         
-            <v-spacer></v-spacer>
-            <v-btn @click="checkStatus"> Ok </v-btn>
+<v-spacer></v-spacer>
+            <v-btn @click="checkStatus">
+Ok
+</v-btn>
           </v-card-actions>
         </v-card>
       </v-dialog>
@@ -270,16 +276,16 @@ const clearData = () => {
             <v-list-item title="Import" @click="importData" />
             <v-list-item title="Export" @click="exportData" />
             <v-list-item title="Clear All" @click="clear_dia = true" />
-      
-          
-          </v-list>
+</v-list>
         </v-menu>
       </v-col>
     </v-row>
     <v-divider class="my-5" />
     <div v-if="bk_data.length === 0" style="height: 600px">
       <div class="text-center">
-        <h2 color="#e5383b">/ᐠ｡ꞈ｡ᐟ\</h2>
+        <h2 color="#e5383b">
+/ᐠ｡ꞈ｡ᐟ\
+</h2>
         <p>Sorry dude !! Got nothing here !!</p>
       </div>
     </div>
@@ -318,12 +324,8 @@ const clearData = () => {
         />
       </div>
     </div>
-
-  </v-container>
-
-
-
-  </v-container>
+</v-container>
+</v-container>
 </template>
 <style>
 .grid {

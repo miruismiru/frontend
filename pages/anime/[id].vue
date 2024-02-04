@@ -212,8 +212,12 @@ const stringInstring = '""';
             <h1 class="mt-2" style="line-height: 2rem; font-size: x-large">
               {{ anime?.title.userPreferred }}
             </h1>
-            <p class="mb-2">{{ anime?.title.english }}</p>
-            <p class="mb-2">{{ anime?.title.native }}</p>
+            <p class="mb-2">
+{{ anime?.title.english }}
+</p>
+            <p class="mb-2">
+{{ anime?.title.native }}
+</p>
             <div class="d-flex d-lg-none flex-column">
               <BookmarkButton
                 :id="anime?.id"
@@ -255,8 +259,12 @@ const stringInstring = '""';
                   <v-card-title>Episode</v-card-title>
                   <v-card elevation="0">
                     <v-tabs v-model="ep_tab" grow="">
-                      <v-tab value="eplist"> Episode list </v-tab>
-                      <v-tab value="other"> Other </v-tab>
+                      <v-tab value="eplist">
+Episode list
+</v-tab>
+                      <v-tab value="other">
+Other
+</v-tab>
                     </v-tabs>
                     <v-card-text>
                       <v-window v-model="ep_tab">
@@ -599,9 +607,15 @@ const stringInstring = '""';
         <v-col>
           <v-card>
             <v-tabs v-model="infotab">
-              <v-tab value="descrpt"> Description </v-tab>
-              <v-tab value="related"> Related </v-tab>
-              <v-tab value="recomd"> Recommendations </v-tab>
+              <v-tab value="descrpt">
+Description
+</v-tab>
+              <v-tab value="related">
+Related
+</v-tab>
+              <v-tab value="recomd">
+Recommendations
+</v-tab>
             </v-tabs>
             <v-card-text>
               <v-window v-model="infotab">
@@ -642,7 +656,9 @@ const stringInstring = '""';
                         />
                       </template>
                       <template #append>
-                        <v-icon color="yellow"> mdi-star </v-icon>
+                        <v-icon color="yellow">
+mdi-star
+</v-icon>
                         {{ item.averageScore / 10 }}
                       </template>
                     </v-list-item>
@@ -688,7 +704,9 @@ const stringInstring = '""';
                         />
                       </template>
                       <template #append>
-                        <v-icon color="yellow"> mdi-star </v-icon>
+                        <v-icon color="yellow">
+mdi-star
+</v-icon>
                         {{ item.averageScore / 10 }}
                       </template>
                     </v-list-item>

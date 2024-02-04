@@ -39,7 +39,9 @@ useHead({
       class="ma-2 pa-4 text-center mx-auto"
     >
       <v-icon class="mb-5" color="blue" icon="mdi-download" size="112" />
-      <h2 class="mb-6">Download</h2>
+      <h2 class="mb-6">
+Download
+</h2>
       <p class="mb-4">
         {{ anime?.title.userPreferred + " Episode " + getEP }}
       </p>

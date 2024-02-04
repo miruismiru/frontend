@@ -53,13 +53,9 @@ const gotoRandomID = async () => {
       <v-divider />
       <v-list>
         <v-list-subheader>More</v-list-subheader>
-        <v-list-item title="About us" to="/about" >
-  
-          
-        </v-list-item>
-        
-        
-      </v-list>
+        <v-list-item title="About us" to="/about">
+</v-list-item>
+</v-list>
     </v-navigation-drawer>
 
     <v-app-bar absolute="">
@@ -86,8 +82,7 @@ const gotoRandomID = async () => {
     <v-footer app height="auto" dense absolute>
       <p>with love ;3 © Copyright {{ new Date().getFullYear() }}</p>
       <v-spacer />
-     
-    </v-footer>
+</v-footer>
   </v-app>
 </template>
 <script>

@@ -55,7 +55,9 @@ export default {
       >
         Disagree
       </v-btn>
-      <v-btn class="my-2" color="green" @click="doTrkfn"> okie ! </v-btn>
+      <v-btn class="my-2" color="green" @click="doTrkfn">
+okie !
+</v-btn>
     </template>
   </v-alert>
 </template>

@@ -77,7 +77,9 @@ const debouncedSearch = debounce(async (query) => {
               }}
             </v-list-item-subtitle>
             <template #append>
-              <v-icon color="yellow"> mdi-star </v-icon>
+              <v-icon color="yellow">
+mdi-star
+</v-icon>
               {{ item.averageScore / 10 }}
             </template>
           </v-list-item>

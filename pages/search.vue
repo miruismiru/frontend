@@ -300,7 +300,9 @@ if (query.q || query.genres || query.tags) {
       <v-card-text v-if="searchResults?.results ? false : true">
         <div class="loadingBlock" style="height: 40vh">
           <div class="d-flex flex-column align-center">
-            <v-icon size="5rem">mdi-magnify</v-icon>
+            <v-icon size="5rem">
+mdi-magnify
+</v-icon>
             <h2>Search Anime</h2>
           </div>
         </div>
@@ -342,7 +344,9 @@ if (query.q || query.genres || query.tags) {
             }}
           </v-list-item-subtitle>
           <template #append>
-            <v-icon color="yellow"> mdi-star </v-icon>
+            <v-icon color="yellow">
+mdi-star
+</v-icon>
             {{ item.averageScore / 10 }}
           </template>
         </v-list-item>

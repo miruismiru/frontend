@@ -23,7 +23,9 @@
       </p>
       <v-divider class="mb-4" />
       <div class="text-end">
-        <v-btn class="mr-1" :href="/\/pwa\.*/.test(useRoute().path) ? '/pwa' : '/'" prepend-icon="mdi-home"> Go home </v-btn>
+        <v-btn class="mr-1" :href="/\/pwa\.*/.test(useRoute().path) ? '/pwa' : '/'" prepend-icon="mdi-home">
+Go home
+</v-btn>
         <v-btn
           v-if="error.statusCode !== 404"
           href=""

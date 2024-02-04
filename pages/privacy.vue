@@ -121,8 +121,7 @@ useHead({
               href="https://amvstr.ml"
               rel="external nofollow noopener"
               target="_blank"
-              >https://amvstr.ml</a
-            >
+              >https://amvstr.ml</a>
           </p>
         </li>
         <li>

@@ -104,20 +104,16 @@ const {
   closable
   style="background-color: rgba(27, 27, 27, 0.712);"
 >
-
-     
-        <template #prepend>
+<template #prepend>
           <v-img
     :width="100"
     cover
     :src="history_state?.latest_anime_watched?.imgsrc"
     style="border-radius: 8px; box-shadow: 0 2px 4px rgb(43, 43, 43);"
   ></v-img>
-
-            </template>
+</template>
           <template #default>
-            
-            <br />
+<br />
             <v-btn
               class="my-2"
               color="#e5383b"
@@ -138,7 +134,9 @@ const {
   <!-- DESKTOP DEVICE -->
   <v-container class="d-lg-block d-sm-none d-none" fluid>
     <v-col>
-      <h1 style="text-align: center;">Trending </h1>
+      <h1 style="text-align: center;">
+Trending
+</h1>
       <div v-if="trpend" class="loadingBlock">
         <v-progress-circular :size="45" indeterminate />
       </div>
@@ -177,7 +175,9 @@ const {
       </v-container>
     </v-col>
     <v-col>
-      <h1  style="text-align: center;">Popular </h1>
+      <h1 style="text-align: center;">
+Popular
+</h1>
       <div v-if="popend" class="loadingBlock">
         <v-progress-circular :size="45" indeterminate />
       </div>
@@ -222,8 +222,9 @@ const {
 
   
   <v-container class="d-lg-none d-sm-block d-xs mb-5" fluid>
-    
-    <h2 style="text-align: center;">Trending </h2>
+<h2 style="text-align: center;">
+Trending
+</h2>
     <div v-if="trpend" class="loadingBlock">
       <v-progress-circular :size="45" indeterminate />
     </div>
@@ -256,7 +257,9 @@ const {
         </div>
       </v-col>
     </v-row>
-    <h2 class="mt-10"  style="text-align: center;">Popular </h2>
+    <h2 class="mt-10" style="text-align: center;">
+Popular
+</h2>
   
     <div v-if="popend" class="loadingBlock">
       <v-progress-circular :size="45" indeterminate />

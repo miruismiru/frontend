@@ -254,10 +254,11 @@ if (query.q || query.genres || query.tags) {
 </script>
 <template>
   <v-breadcrumbs>
-  
-  </v-breadcrumbs>
+</v-breadcrumbs>
   <v-container>
-    <h1 class="mb-2">Search </h1>
+    <h1 class="mb-2">
+Search
+</h1>
     <v-text-field
       v-model="search"
       variant="outlined"
@@ -296,7 +297,9 @@ if (query.q || query.genres || query.tags) {
       <v-card-text v-if="searchResults?.results ? false : true">
         <div class="loadingBlock" style="height: 40vh">
           <div class="d-flex flex-column align-center">
-            <v-icon size="5rem">mdi-map-search</v-icon>
+            <v-icon size="5rem">
+mdi-map-search
+</v-icon>
             <h2>have a look around  .-.</h2>
           </div>
         </div>
@@ -338,7 +341,9 @@ if (query.q || query.genres || query.tags) {
             }}
           </v-list-item-subtitle>
           <template #append>
-            <v-icon color="yellow"> mdi-star </v-icon>
+            <v-icon color="yellow">
+mdi-star
+</v-icon>
             {{ item.averageScore / 10 }}
           </template>
         </v-list-item>

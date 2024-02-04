@@ -360,12 +360,8 @@ export default {
           <v-breadcrumbs-divider />
           <v-breadcrumbs-item
             :title="'Episode ' + getGogoID.split('-episode-')[1]"
-            
-          />   
-      
-
-         
-        </v-breadcrumbs>
+/>
+</v-breadcrumbs>
       </v-col>
       <v-col cols="12" lg="8">
         <ClientOnly>
@@ -482,8 +478,7 @@ export default {
                     </div>
                   </div>
                   <v-card-actions>
-                    
-                    <v-spacer />
+<v-spacer />
                     <v-btn
                       icon="mdi-close"
                       @click="loadSettingDialog = false"

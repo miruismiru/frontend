@@ -464,8 +464,7 @@ export default {
                     </div>
                   </div>
                   <v-card-actions>
-                   
-                    <v-spacer />
+<v-spacer />
                     <v-btn
                       icon="mdi-close"
                       @click="loadSettingDialog = false"
@@ -500,8 +499,7 @@ export default {
           </v-list>
         </v-card>
       </v-col>
-     
-    </v-row>
+</v-row>
   </v-container>
 </template>
 <style>

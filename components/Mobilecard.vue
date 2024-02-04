@@ -1,18 +1,16 @@
 
 
   <template>
-
-   
-    <v-card
+<v-card
   class="mx-auto mb-10" 
   max-width="400"
->  <NuxtLink
+>
+<NuxtLink
       v-bind="props"
       :to="
         /\/pwa\.*/.test(useRoute().path) ? '/pwa/anime/' + id : '/pwa/anime/' + id
       "
-  
-    >
+>
   <div class="background-container">
     <div class="background" :style=" { backgroundImage: 'url(' + imgsrc + ')' }"></div>
 
@@ -23,23 +21,25 @@
       loading="lazy"
       :src="imgsrc"
       :alt="imgalt"
-    > </v-img>
+    >
+</v-img>
   </div>
 </NuxtLink>
 
   <v-card-subtitle class="text-center pt-1 text-wrap">
-  <h3>{{ title }} <v-icon
+  <h3>
+{{ title }} <v-icon
         class="addbkm"
         :icon="bookmarkStatus"
         size="28"
         @click="bookmarkHandler"
-      /></h3>   
+      />
+</h3>   
 </v-card-subtitle>
 
   
 <v-card-text class="text-center">
-
-  <v-chip
+<v-chip
     v-if="props.type !== ''"
     label
     :color="
@@ -55,7 +55,9 @@
     "
     class="mr-2 mb-2" 
   >
-  <v-icon left size="14"  class="mr-2">mdi-television</v-icon>
+  <v-icon left size="14" class="mr-2">
+mdi-television
+</v-icon>
 
     {{ props.type }}
   </v-chip>
@@ -76,7 +78,9 @@
     "
     class="mr-2 mb-2" 
   >
-  <v-icon left size="19"  class="mr-2">mdi-origin</v-icon>
+  <v-icon left size="19" class="mr-2">
+mdi-origin
+</v-icon>
 
     {{
       props.status === "FINISHED"
@@ -94,17 +98,14 @@
     :color="'warning'"
     class="mb-3"
   >
-  <v-icon left size="19"  class="mr-2">mdi-archive-clock-outline</v-icon>
+  <v-icon left size="19" class="mr-2">
+mdi-archive-clock-outline
+</v-icon>
 
     {{ year }}
   </v-chip>
 </v-card-text>
-
-
-
-
 </v-card>
-
 </template>
 
 

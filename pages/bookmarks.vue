@@ -198,7 +198,9 @@ const clearData = () => {
             {{ dialog_text }}
           </v-card-text>
           <v-card-actions>
-            <v-btn block @click="app_dialog = false"> Ok </v-btn>
+            <v-btn block @click="app_dialog = false">
+Ok
+</v-btn>
           </v-card-actions>
         </v-card>
       </v-dialog>
@@ -209,8 +211,12 @@ const clearData = () => {
             Are you sure do you want to clear all of the data?
           </v-card-text>
           <v-card-actions>
-            <v-btn @click="clear_dia = false"> Cancel </v-btn>
-            <v-btn @click="clearData"> Clear All </v-btn>
+            <v-btn @click="clear_dia = false">
+Cancel
+</v-btn>
+            <v-btn @click="clearData">
+Clear All
+</v-btn>
           </v-card-actions>
         </v-card>
       </v-dialog>
@@ -250,7 +256,9 @@ const clearData = () => {
               Help ?
             </v-btn>
             <v-spacer></v-spacer>
-            <v-btn @click="checkStatus"> Ok </v-btn>
+            <v-btn @click="checkStatus">
+Ok
+</v-btn>
           </v-card-actions>
         </v-card>
       </v-dialog>
@@ -274,16 +282,16 @@ const clearData = () => {
             <v-list-item title="Import" @click="importData" />
             <v-list-item title="Export" @click="exportData" />
             <v-list-item title="Clear All" @click="clear_dia = true" />
-   
-       
-          </v-list>
+</v-list>
         </v-menu>
       </v-col>
     </v-row>
     <v-divider class="my-5" />
     <div v-if="bk_data.length === 0" style="height: 600px">
       <div class="text-center">
-        <v-icon color="grey--text" size="100"> mdi-heart-outline </v-icon>
+        <v-icon color="grey--text" size="100">
+mdi-heart-outline
+</v-icon>
         <h2>No Bookmarks  (ง︡'-'︠)ง</h2>
       </div>
     </div>

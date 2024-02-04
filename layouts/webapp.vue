@@ -9,8 +9,10 @@ import GuestCount from '~/components/OnlineUsers.vue';
     <v-main>
       <slot />
     </v-main>
-    <v-bottom-navigation :elevation="8" grow   active
-      color="#e5383b">
+    <v-bottom-navigation
+:elevation="8" grow active
+      color="#e5383b"
+>
       <v-btn to="/pwa" value="home">
         <v-icon>mdi-ghost</v-icon>
       </v-btn>
@@ -26,8 +28,6 @@ import GuestCount from '~/components/OnlineUsers.vue';
         <v-icon>mdi-eye-plus-outline</v-icon>
         <GuestCount />
       </v-btn>
-      
-
-    </v-bottom-navigation>
+</v-bottom-navigation>
   </v-app>
 </template>
