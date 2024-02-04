@@ -99,6 +99,9 @@ export default defineNuxtConfig({
     },
     "/api/onlineUsers": {
       cors: true
+    },
+    "/api/recent": {
+      cors: true
     }
   },
 
