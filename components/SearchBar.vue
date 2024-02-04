@@ -60,7 +60,7 @@ const debouncedSearch = debounce(async (query) => {
               />
             </template>
             <v-list-item-title>
-              {{ item.title.userPreferred }}
+              {{ item.title.english }}
             </v-list-item-title>
             <v-list-item-subtitle>
               Episode {{ item.episodes }} /
