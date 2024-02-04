@@ -27,7 +27,7 @@ export default defineEventHandler(async (event) => {
       }
   
       search = await response.json();
-      done.push(search.results)
+      // done.push(search.results)
 
   }
   
