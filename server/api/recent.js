@@ -28,6 +28,7 @@ export default defineEventHandler(async (event) => {
   
       search = await response.json();
       done.push(search.results)
+
   }
   
      
@@ -50,5 +51,8 @@ export default defineEventHandler(async (event) => {
       statusCode: 500,
       statusMessage: 'server error',
     });
+    done = [];
+
   }
+
 });
