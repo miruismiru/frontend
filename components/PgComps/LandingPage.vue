@@ -36,7 +36,7 @@ const {
   refresh: popdataRefresh,
   error: poperr,
 } = useFetch(
-  `${env.public.API_URL}/api/${env.public.version}/popular?limit=12`,
+  `https://dotstream.fun/api/recent`,
   {
     cache: "force-cache",
   }
@@ -176,7 +176,7 @@ Trending
     </v-col>
     <v-col>
       <h1 style="text-align: center;">
-Popular
+Recents
 </h1>
       <div v-if="popend" class="loadingBlock">
         <v-progress-circular :size="45" indeterminate />
@@ -196,7 +196,7 @@ Popular
       <v-container v-else fluid>
         <div class="grid">
           <div
-            v-for="(d, i) in popularData?.results"
+            v-for="(d, i) in popularData?.data"
             :key="i"
             class="d-flex justify-center"
           >
@@ -258,7 +258,7 @@ Trending
       </v-col>
     </v-row>
     <h2 class="mt-10" style="text-align: center;">
-Popular
+Recents
 </h2>
   
     <div v-if="popend" class="loadingBlock">
@@ -278,7 +278,7 @@ Popular
     </div>
     <v-row v-else>
       <v-col class="grid">
-        <div v-for="d in popularData?.results" :key="d.id">
+        <div v-for="d in popularData?.data" :key="d.id">
           <Mobilecard
             :id="d.id"
             :title="d.title.userPreferred"
