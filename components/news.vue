@@ -1,6 +1,6 @@
 <template>
   <div class="cool-cover-container">
-    <v-row>
+    <v-row v-if="!loading">
       <v-col v-for="item in apiData.data" :key="item.id" cols="12" md="6" lg="4">
         <v-card class="cool-cover-card" @mouseover="hoverCard(item.id)" @mouseleave="leaveCard(item.id)">
           <v-img :src="item.thumbnail" class="cool-cover-image" @error="handleImageError"></v-img>
@@ -12,6 +12,13 @@
             <v-icon>mdi-open-in-new</v-icon>
           </v-btn>
         </v-card>
+      </v-col>
+    </v-row>
+    <v-row v-else>
+      <v-col cols="12">
+        <div class="cool-progress-container">
+    <v-progress-circular indeterminate size="64" color="red"></v-progress-circular>
+  </div>
       </v-col>
     </v-row>
   </div>
@@ -54,6 +61,12 @@
 .cool-cover-card:hover {
   transform: scale(1.05);
 }
+.cool-progress-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust the height based on your design */
+}
 </style>
 
 <script>
@@ -63,6 +76,7 @@ export default {
   data() {
     return {
       apiData: { data: [] },
+      loading: true, // Add loading state
       hoveredCard: null,
     };
   },
@@ -71,9 +85,11 @@ export default {
       axios.get('/api/newsinfo')
         .then(response => {
           this.apiData = response.data;
+          this.loading = false; // Set loading to false after data is fetched
         })
         .catch(error => {
           console.error('Error fetching data from API:', error);
+          this.loading = false; // Set loading to false on error
         });
     },
     openUrl(url) {
