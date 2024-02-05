@@ -68,7 +68,7 @@ export default {
   },
   methods: {
     getData() {
-      axios.get('http://localhost:3000/api/newsinfo')
+      axios.get('/api/newsinfo')
         .then(response => {
           this.apiData = response.data;
         })
