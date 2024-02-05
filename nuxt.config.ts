@@ -102,6 +102,12 @@ export default defineNuxtConfig({
     },
     "/api/recent": {
       cors: true
+    },
+    "/api/news": {
+      cors: true
+    },
+    "/api/newsinfo": {
+      cors: true
     }
   },
 

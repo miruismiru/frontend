@@ -1,4 +1,5 @@
 <script setup>
+
 useSeoMeta({
   ogTitle: "About",
   ogDescription: "About DOTstream...",
@@ -16,6 +17,8 @@ useHead({
   },
   title: "About",
 });
+
+
 </script>
 <template>
   <v-container>
@@ -37,7 +40,11 @@ You can consider donating us to keep it alive! <br>
 </div>
       </div>
     </div>
+  <news/>
+
+
   </v-container>
+
 </template>
 <style scoped>
 .banner {
