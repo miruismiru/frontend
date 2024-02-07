@@ -1,4 +1,7 @@
 <script setup>
+import { useStorage } from "@vueuse/core";
+
+const history_state = useStorage("site-watch", {});
 
 useSeoMeta({
   ogTitle: "About",
@@ -40,7 +43,58 @@ You can consider donating us to keep it alive! <br>
 </div>
       </div>
     </div>
-  <news/>
+    <ClientOnly>
+  <div v-if="history_state?.latest_anime_watched">
+    <template v-for="(anime, index) in history_state.all_anime_watched" :key="index">
+
+      <v-alert
+        class="mt-4"
+        icon="mdi-history"
+        :title="`${anime.title}`"
+        :text="anime.description"
+        style="background-color: rgba(27, 27, 27, 0.712);"
+      >
+        <template #prepend>
+          <v-img
+            :width="100"
+            cover
+            :src="anime.imgsrc"
+            style="border-radius: 8px; box-shadow: 0 2px 4px rgb(43, 43, 43);"
+          ></v-img>
+        </template>
+        <template #default>
+          <br />
+          <v-chip
+      class="ma-2"
+      color="red"
+      variant="outlined"
+    >
+   Episode {{ anime.curr_ep }} / {{ anime.type }}
+      <v-icon end icon="mdi-video-check-outline"></v-icon>
+    </v-chip>
+    <v-chip
+      class="ma-2"
+      color="red"
+      variant="outlined"
+    >
+   {{anime.isDub ? 'Dub ' : 'Sub '}}
+      <v-icon end icon="mdi-subtitles-outline"></v-icon>
+    </v-chip>
+          <v-btn
+            class="my-2"
+            color="#e5383b"
+            :to="`/pwa/watch/${anime.id}-${anime.ep_id}`"
+            prepend-icon="mdi-play"
+          >
+            Resume
+          </v-btn>
+        </template>
+      </v-alert>
+    </template>
+  </div>
+</ClientOnly>
+
+
 
 
   </v-container>

@@ -135,8 +135,28 @@ const latestAnimeWatched = {
   year: anime?.value.year,
 };
 
+const index = setHistory.value.all_anime_watched
+  ? setHistory.value.all_anime_watched.findIndex((anime) => anime.id === latestAnimeWatched.id)
+  : -1;
+
+// If not already watched, push new data into all_anime_watched
+if (index === -1) {
+  // If the array doesn't exist, initialize it as an empty array
+  setHistory.value.all_anime_watched = setHistory.value.all_anime_watched || [];
+  
+  // Now you can safely unshift the latestAnimeWatched into the array
+  setHistory.value.all_anime_watched.unshift(latestAnimeWatched);
+} else {
+  // If latestAnimeWatched is already present, remove it
+  setHistory.value.all_anime_watched.splice(index, 1);
+  
+  // Unshift the updated latestAnimeWatched into the array
+  setHistory.value.all_anime_watched.unshift(latestAnimeWatched);
+}
+
 setHistory.value.latest_anime_watched = latestAnimeWatched;
 setHistory.value.latest_watched_date = Date.now();
+
 
 const get_key = useStorage("cloud-cfg", {});
 
