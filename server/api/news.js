@@ -25,7 +25,7 @@ export default defineEventHandler(async (event) => {
           if (data.results && data.results.length > 0) {
             const matchingResult = {
              
-                ...data.results[0],  // Copy existing properties
+                ...data.results[0],  
                 ep: fetchedData.results.find(anime => anime.title === title)?.episode
               
             };
