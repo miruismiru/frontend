@@ -61,7 +61,8 @@ const {
           class="s"
         >
         <div class="carousel-item carousel-blur">
-          <div class="d-flex flex-column pa-2 justify-center">
+          <img class="carousel-image" :src="item.coverImage.large" alt="Carousel Image" />
+    <div class="d-flex flex-column pa-2 justify-center">
             <h2>{{ item.title.userPreferred }}</h2>
             <p class="text--secondary">
               {{ item.title.native }}
@@ -365,5 +366,13 @@ Trending
   background-repeat: no-repeat; /* Prevents the background image from repeating */
 
 }
+.carousel-image {
 
+}
+
+@media screen and (max-width: 600px) {
+  .carousel-image {
+    display: none;
+  }
+}
 </style>
