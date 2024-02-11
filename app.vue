@@ -1,5 +1,6 @@
 <script setup>
 import { useStorage } from "@vueuse/core";
+import '@mdi/font/css/materialdesignicons.css'
 const get_key = useStorage("cloud-cfg", {});
 const bk_state = useStorage("site-bookmarker", []);
 const t_d_state = useStorage("artplayer_settings", {});

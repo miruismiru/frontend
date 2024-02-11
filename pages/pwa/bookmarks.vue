@@ -258,25 +258,16 @@ Ok
         </v-card>
       </v-dialog>
     </ClientOnly>
-    <v-row align="center">
-      <v-col>
+    <v-row align="center" class="bgc" >
+
         <h2> bookmarks </h2>
-      </v-col>
+
       <v-col class="d-flex justify-end">
         <v-menu location="bottom">
           <template #activator="{ props }">
-            <v-btn v-bind="props" icon="mdi-chevron-down-box" variant="text" />
+            <v-btn v-bind="props" icon="mdi-book" variant="text" />
           </template>
-          <v-list>
-            <v-list-item
-              title="Save All (Cloud)"
-              :disabled="!cfg.enabled"
-              @click="saveAlltoDB"
-            />
-            <v-list-item title="Import" @click="importData" />
-            <v-list-item title="Export" @click="exportData" />
-            <v-list-item title="Clear All" @click="clear_dia = true" />
-</v-list>
+       
         </v-menu>
       </v-col>
     </v-row>
@@ -342,5 +333,12 @@ Ok
     grid-template-columns: repeat(auto-fit);
     
   }
+  .bgc {
+  background-image: url('/black.png');
+  background-size: cover; /* This ensures the background image covers the entire container */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents the background image from repeating */
+
+}
 }
 </style>

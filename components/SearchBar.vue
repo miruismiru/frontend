@@ -27,7 +27,7 @@ const debouncedSearch = debounce(async (query) => {
         v-model="search"
         variant="outlined"
         color="#e5383b"
-        label="Name of The Anime ┐(‘ ～`;)┌ ??? "
+        label="search"
         flat
         single-line
         hide-details
@@ -39,7 +39,7 @@ const debouncedSearch = debounce(async (query) => {
     
       <v-card>
         <v-list lines="two">
-          <v-list-item title="Results ᕕ( ╯°□° )ᕗ" />
+          <v-list-item title="" />
           <v-divider />
           <v-list-item
             v-for="item in searchResults?.results"
@@ -49,6 +49,7 @@ const debouncedSearch = debounce(async (query) => {
                 ? '/pwa/anime/' + item.id
                 : '/anime/' + item.id
             "
+            class="bgc"
           >
             <template #prepend>
               <img
@@ -87,10 +88,17 @@ mdi-star
             v-if="searchResults?.results.length > 0"
             :to="'/search?q=' + search"
           >
-            <v-list-item-title>Search more...</v-list-item-title>
           </v-list-item>
         </v-list>
       </v-card> 
     </v-menu>
   </ClientOnly>
 </template>
+<style>
+.bgc {
+  background-image: url('/black.png');
+  background-size: cover; /* This ensures the background image covers the entire container */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents the background image from repeating */
+
+}</style>

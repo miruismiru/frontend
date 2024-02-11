@@ -61,7 +61,9 @@ const {
           class="s"
         >
         <div class="carousel-item carousel-blur">
-          <img class="carousel-image" :src="item.coverImage.large" alt="Carousel Image" />
+          <div class="image-container">
+    <img class="carousel-image" :src="item.coverImage.extraLarge" alt="Carousel Image" />
+  </div>
     <div class="d-flex flex-column pa-2 justify-center">
             <h2>{{ item.title.userPreferred }}</h2>
             <p class="text--secondary">
@@ -359,15 +361,22 @@ Trending
   filter: blur(10px);
   z-index: -1;
 }
-.bgc {
-  background-image: url('https://i.imgur.com/aDeYczM.png');
-  background-size: cover; /* This ensures the background image covers the entire container */
-  background-position: center; /* Centers the background image */
-  background-repeat: no-repeat; /* Prevents the background image from repeating */
 
+.image-container {
+  position: relative;
+  overflow: hidden;
+  width: 50%; /* Ensure the container takes the full width of its parent */
+  height: 100%;
 }
-.carousel-image {
 
+.carousel-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  object-fit: cover; /* This property ensures that the image covers the entire container */
+  mask-image: linear-gradient(to top, transparent, black); /* Adjust the gradient as needed */
 }
 
 @media screen and (max-width: 600px) {

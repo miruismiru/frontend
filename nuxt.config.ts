@@ -9,12 +9,12 @@ export default defineNuxtConfig({
         { name: "viewport", content: "width=device-width, initial-scale=1" },
         {
           name: "description",
-          content: "DOTstream - A streaming service for weebo...",
+          content: "DOTstream - Lets Pirate Together",
         },
         {
           name: "keywords",
           content:
-            "DOTstream, amvstr, amvstreaming, anime streaming site, anime, free anime",
+            "DOTstream, anime watch anime site, anime, free anime",
         },
         { property: "og:type", content: "website" },
         { property: "og:url", content: "/" },

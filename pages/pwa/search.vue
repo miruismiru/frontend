@@ -263,7 +263,7 @@ Search
       v-model="search"
       variant="outlined"
         color="#e5383b"
-        label="Name of The Anime ┐(‘ ～`;)┌ ??? "
+        label="Name of The Anime "
       flat
       clearable
       single-line
@@ -276,6 +276,7 @@ Search
         <v-combobox
           v-model="selectGenres"
           :items="genreItems"
+        color="#e5383b"
           variant="outlined"
           label="Genres"
           multiple
@@ -293,7 +294,7 @@ Search
         ></v-combobox>
       </v-col>
     </v-row>
-    <v-card class="mt-4">
+    <v-card class="mt-4 bgc">
       <v-card-text v-if="searchResults?.results ? false : true">
         <div class="loadingBlock" style="height: 40vh">
           <div class="d-flex flex-column align-center">
@@ -314,7 +315,7 @@ mdi-map-search
           v-for="item in searchResults.results"
           v-else
           :key="item.id"
-          :to="'/anime/' + item.id"
+          :to="'/pwa/anime/' + item.id"
         >
           <template #prepend>
             <img
@@ -356,5 +357,13 @@ mdi-star
   height: 100vh;
   display: grid;
   place-items: center;
+}
+
+.bgc {
+  background-image: url('/black.png');
+  background-size: cover; /* This ensures the background image covers the entire container */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents the background image from repeating */
+
 }
 </style>

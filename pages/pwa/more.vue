@@ -24,23 +24,50 @@ useHead({
 
 </script>
 <template >
+
   <v-container>
-    <div  class="bgc" style="height: fit-content; display: grid; place-items: center; background-color: #212121; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+    <div  class="bgc" style="height: fit-content; display: grid; place-items: center; background-color: #212121; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);border-radius: 22px">
       <div  class="pa-5 bgc" style="background-color: #212121; ">
 <header class="banner">
       <img src="/logo2.png" alt="logo" class="banner-image" />
       <p>
           i will think about something to write or you can send me something to write ... 
+          
         </p>
+        <a href="https://discord.com/users/1155782105352114236" target="_blank">
+  <v-btn  variant="outlined"
+          class="my-2"
+          color="#e5383b"
+          prepend-icon="mdi-at"
+  >
+    is_coffee
+  </v-btn>
+</a>
+
+<v-btn
+    variant="outlined"
+    class="my-2"
+    color="#e5383b"
+    prepend-icon="mdi-bank"
+    @click="handleButtonClick"
+  >
+    7770000019199
+  </v-btn>
+
+  <p>Consider donating us to keep it alive!</p>
+  <v-snackbar
+      v-model="snackbar"
+      :timeout="3000" 
+      color="success"
+      variant="outlined"
+    >
+      Number copied to clipboard !
+    </v-snackbar>
 </header>
 
         <div class="mt-2">
 </div>
-        <div class="my-">
-You can consider donating us to keep it alive! <br>
-
-          discord @is_coffee
-</div>
+      
       </div>
     </div>
     <ClientOnly>
@@ -51,15 +78,14 @@ You can consider donating us to keep it alive! <br>
         class="mt-4 bgc"
         icon="mdi-history"
         :title="`${anime.title}`"
-        :text="anime.description"
-        style="background-color: rgba(27, 27, 27, 0.712);"
+        style="background-color: rgba(27, 27, 27, 0.712); border-radius: 22px"
       >
         <template #prepend>
           <v-img
             :width="100"
             cover
             :src="anime.imgsrc"
-            style="border-radius: 8px; box-shadow: 0 2px 4px rgb(43, 43, 43);"
+            style="border-radius: 8px; "
           ></v-img>
         </template>
         <template #default>
@@ -80,13 +106,14 @@ You can consider donating us to keep it alive! <br>
    {{anime.isDub ? 'Dub ' : 'Sub '}}
       <v-icon end icon="mdi-subtitles-outline"></v-icon>
     </v-chip>
-          <v-btn
+          <v-btn  variant="outlined"
             class="my-2"
             color="#e5383b"
+           
             :to="`/pwa/watch/${anime.id}-${anime.ep_id}`"
             prepend-icon="mdi-play"
           >
-            Resume
+            Play
           </v-btn>
         </template>
       </v-alert>
@@ -113,10 +140,32 @@ You can consider donating us to keep it alive! <br>
 }
 
 .bgc {
-  background-image: url('https://i.imgur.com/aDeYczM.png');
+  background-image: url('/black.png');
   background-size: cover; /* This ensures the background image covers the entire container */
   background-position: center; /* Centers the background image */
   background-repeat: no-repeat; /* Prevents the background image from repeating */
 
 }
 </style>
+
+<script>
+export default {
+  data() {
+    return {
+      snackbar: false,  // Initialize snackbar state
+    };
+  },
+  methods: {
+    handleButtonClick() {
+      const textToCopy = "is_coffee";
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        console.log("Text copied to clipboard:", textToCopy);
+        this.snackbar = true;  // Show the snackbar
+        // You can add any additional logic after the text is copied
+      }).catch((error) => {
+        console.error("Unable to copy text to clipboard", error);
+      });
+    },
+  },
+};
+</script>

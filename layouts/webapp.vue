@@ -1,6 +1,6 @@
 <script setup>
 import GuestCount from '~/components/OnlineUsers.vue'; 
-// x
+
 
 
 </script>
@@ -12,6 +12,7 @@ import GuestCount from '~/components/OnlineUsers.vue';
     <v-bottom-navigation
 :elevation="8" grow active
       color="#e5383b"
+      class="bgc"
 >
       <v-btn to="/pwa" value="home">
         <v-icon>mdi-ghost</v-icon>
@@ -31,3 +32,11 @@ import GuestCount from '~/components/OnlineUsers.vue';
 </v-bottom-navigation>
   </v-app>
 </template>
+<style>
+.bgc {
+  background-image: url('/black.png');
+  background-size: cover; /* This ensures the background image covers the entire container */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents the background image from repeating */
+
+}</style>

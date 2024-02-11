@@ -13,7 +13,7 @@
     "lintfix": "prettier --write --list-different . && npm run lint:js --fix"
   },
   "devDependencies": {
-    "@mdi/font": "^7.2.96",
+    "@mdi/font": "^7.4.47",
     "@nuxt/devtools": "^1.0.0-beta.0",
     "@nuxt/eslint-config": "^0.1.1",
     "@nuxt/image": "^1.1.0",

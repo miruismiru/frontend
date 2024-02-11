@@ -17,9 +17,9 @@ const {
     cache: "force-cache",
   }
 );
-
+console.log(anime.value.id)
 useSeoMeta({
-  ogTitle: anime.value?.title.userPreferred,
+  ogTitle: anime.value.title.userPreferred,
   ogDescription: anime.value?.description,
   ogImage: anime.value?.coverImage.large,
   ogUrl: useRoute().fullPath,
@@ -118,14 +118,14 @@ const stringInstring = '""';
   <div v-else>
     <v-breadcrumbs>
       <template #prepend>
-        <v-icon size="small" icon="mdi-home"></v-icon>
+        <v-icon size="small" icon="mdi-ghost"></v-icon>
       </template>
       <v-breadcrumbs-item title="Home" to="/pwa" />
       <v-breadcrumbs-divider />
       <v-breadcrumbs-item :title="useRoute().params.id" />
     </v-breadcrumbs>
     <v-card>
-      <v-img
+      <v-img class="banner"
         v-if="anime?.bannerImage !== null"
         :src="anime?.bannerImage"
         max-height="280px"
@@ -725,11 +725,24 @@ mdi-star
 }
 
 .image-poster {
-  background-color: rgba(212, 230, 245, 0.5);
-  border-radius: 4px;
-  box-shadow: 0 0 29px rgba(49, 54, 68, 0.25);
+  border-radius: 20px;
+
   width: 160px;
+  mask-image: linear-gradient(to top, transparent, black); /* Adjust the gradient as needed */
+
 }
+
+.banner {
+  display: block;
+  width: 100%;
+  height: 100%;
+  /* border-top-right-radius: 20px; */
+  /* border-top-left-radius: 20px; */
+  object-fit: cover; /* This property ensures that the image covers the entire container */
+  mask-image: linear-gradient(to top, transparent, black); /* Adjust the gradient as needed */
+}
+
+
 /* media width for sm */
 @media (min-width: 768px) {
   .card-container {
