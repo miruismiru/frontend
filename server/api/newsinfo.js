@@ -1,32 +1,47 @@
 let fetchedData = null;
 let done = [];
 
+const maxRetries = 3;
+
+async function fetchWithRetry(url, retries = 0) {
+  try {
+    const response = await fetch(url);
+
+    if (!response.ok) {
+      console.error(`Error fetching data for URL=${url}. Status: ${response.status}`);
+      throw new Error('Network response was not ok');
+    }
+
+    return response.json();
+  } catch (error) {
+    if (retries < maxRetries) {
+      console.error(`Retry ${retries + 1} for URL=${url}:`, error);
+      return fetchWithRetry(url, retries + 1);
+    } else {
+      throw error;
+    }
+  }
+}
+
 export default defineEventHandler(async (event) => {
   try {
     if (!fetchedData) {
-      const response = await fetch('https://march-api1.vercel.app/news/ann/recent-feeds');
-
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-
-      fetchedData = await response.json();
+      const feedsResponse = await fetchWithRetry('https://march-api1.vercel.app/news/ann/recent-feeds');
+      fetchedData = feedsResponse;
     }
 
-    // Check if fetchedData is still null before mapping over it
     if (fetchedData) {
       const fetchPromises = fetchedData.map(async (item) => {
-        const response = await fetch(`https://march-api1.vercel.app/news/ann/info?id=${item.id}`);
-
-        if (!response.ok) {
-          console.error(`Error fetching data for id=${item.id}. Status: ${response.status}`);
-          throw new Error('Network response was not ok');
+        try {
+          const infoResponse = await fetchWithRetry(`https://march-api1.vercel.app/news/ann/info?id=${item.id}`);
+          return infoResponse;
+        } catch (error) {
+          console.error(`Error fetching data for id=${item.id}:`, error);
+          return null; // or handle the error as needed
         }
-
-        return response.json();
       });
 
-      done = await Promise.all(fetchPromises);
+      done = await Promise.all(fetchPromises.filter(Boolean)); // filter out null responses
     }
 
     return {
@@ -36,8 +51,6 @@ export default defineEventHandler(async (event) => {
     };
   } catch (error) {
     console.error('Error in event handler:', error);
-
-    // Rethrow the error or customize the error response
     throw error;
   } finally {
     done = [];

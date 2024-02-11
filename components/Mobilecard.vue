@@ -2,7 +2,7 @@
 
   <template>
 <v-card
-  class="mx-auto mb-10" 
+  class="mx-auto mb-10 bgc" 
   max-width="400"
 >
 <NuxtLink
@@ -12,9 +12,10 @@
       "
 >
   <div class="background-container">
-    <div class="background" :style=" { backgroundImage: 'url(' + imgsrc + ')' }"></div>
+    <div class=" background" :style=" { backgroundImage: 'url(' + imgsrc + ')' } "></div>
 
     <v-img
+    class="carousel-blur"
       style="object-fit: cover;"
       width="400"
       height="200"
@@ -22,10 +23,16 @@
       :src="imgsrc"
       :alt="imgalt"
     >
-</v-img>
+  
+  </v-img>
+
   </div>
 </NuxtLink>
 
+
+
+  
+<v-card-text class="text-center">
   <v-card-subtitle class="text-center pt-1 text-wrap">
   <h3>
 {{ title }} <v-icon
@@ -36,9 +43,6 @@
       />
 </h3>   
 </v-card-subtitle>
-
-  
-<v-card-text class="text-center">
 <v-chip
     v-if="props.type !== ''"
     label
@@ -246,6 +250,8 @@ watch(
 }
 .background-container {
   position: relative;
+
+
 }
 
 .background {
@@ -256,13 +262,28 @@ watch(
   bottom: 0;
   background-size: cover;
   z-index: -1;
-  filter: blur(2px);
+  filter: blur(1px);
 
 }
 
 
 
+.carousel-blur {
+  position: relative;
 
+}
+
+.carousel-blur::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.048), rgb(0, 0, 0));
+  filter: blur(10px);
+  z-index: -1;
+}
 
 
 
@@ -338,5 +359,12 @@ watch(
   .addbkm {
     opacity: 1;
   }
+  .bgc {
+  background-image: url('https://i.imgur.com/aDeYczM.png');
+  background-size: cover; /* This ensures the background image covers the entire container */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents the background image from repeating */
+
+}
 }
 </style>

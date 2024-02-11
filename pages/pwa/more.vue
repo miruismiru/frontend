@@ -23,10 +23,10 @@ useHead({
 
 
 </script>
-<template>
+<template >
   <v-container>
-    <div style="height: fit-content; display: grid; place-items: center; background-color: #212121; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-      <div class="pa-5" style="background-color: #212121; ">
+    <div  class="bgc" style="height: fit-content; display: grid; place-items: center; background-color: #212121; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+      <div  class="pa-5 bgc" style="background-color: #212121; ">
 <header class="banner">
       <img src="/logo2.png" alt="logo" class="banner-image" />
       <p>
@@ -48,7 +48,7 @@ You can consider donating us to keep it alive! <br>
     <template v-for="(anime, index) in history_state.all_anime_watched" :key="index">
 
       <v-alert
-        class="mt-4"
+        class="mt-4 bgc"
         icon="mdi-history"
         :title="`${anime.title}`"
         :text="anime.description"
@@ -110,5 +110,13 @@ You can consider donating us to keep it alive! <br>
   max-height: 150px; /* Set your preferred height */
   max-width: 100%; /* Ensure the image does not exceed its container width */
   margin-bottom: 10px; /* Add some space below the image */
+}
+
+.bgc {
+  background-image: url('https://i.imgur.com/aDeYczM.png');
+  background-size: cover; /* This ensures the background image covers the entire container */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents the background image from repeating */
+
 }
 </style>

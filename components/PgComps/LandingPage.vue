@@ -36,7 +36,7 @@ const {
   refresh: popdataRefresh,
   error: poperr,
 } = useFetch(
-  `https://dotstream.fun/api/recent`,
+  `/api/news`,
   {
     cache: "force-cache",
   }
@@ -97,7 +97,7 @@ const {
     <ClientOnly>
       <div v-if="history_state?.latest_anime_watched">
         <v-alert
-  class="mt-4"
+  class="mt-4 bgc"
   icon="mdi-history"
   title="Continue Watching  "
   :text="`${history_state?.latest_anime_watched?.title} Episode ${history_state?.latest_anime_watched?.curr_ep} ${history_state?.latest_anime_watched?.isDub ? 'Dub ᕙ(`▿´)ᕗ' : 'Sub ᕙ(`▿´)ᕗ'}`"
@@ -160,12 +160,12 @@ const {
             class="d-flex justify-center"
           >
             <AnimeCard
-              :id="d.id"
+            :id="d.id"
               :title="d.title.userPreferred"
               :imgsrc="d.coverImage.large"
               :imgalt="d.id"
               :anime-color="d.coverImage.color"
-              :year="d.seasonYear"
+              :year="`New Episode - ${d.ep}`"
               :type="d.format"
               :total-ep="d.episodes"
               :status="d.status"
@@ -249,7 +249,7 @@ Trending
             :imgsrc="d.coverImage.large"
             :imgalt="d.id"
             :anime-color="d.coverImage.color"
-            :year="d.seasonYear"
+            :year="`New Episode - ${d.ep}`"
             :type="d.format"
             :total-ep="d.episodes"
             :status="d.status"
@@ -359,6 +359,12 @@ Trending
   filter: blur(10px);
   z-index: -1;
 }
+.bgc {
+  background-image: url('https://i.imgur.com/aDeYczM.png');
+  background-size: cover; /* This ensures the background image covers the entire container */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents the background image from repeating */
 
+}
 
 </style>
